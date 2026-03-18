@@ -30,10 +30,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop All",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "Best Sellers",
-            "button_link_2": "shopify:\/\/collections\/best-selling",
+            "button_link_2": "shopify://collections/best-selling",
             "button_style_secondary_2": true
           }
         }
@@ -90,10 +90,8 @@
         "9cf085d7-fa46-4c67-b3a2-c3111c35c83b": {
           "type": "Image",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/FreeGift-900x500b.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/FreeGift-900x900b.jpg",
             "title": "",
-            "url": "shopify:\/\/products\/free-gift-with-purchase",
+            "url": "shopify://products/free-gift-with-purchase",
             "loading": "default",
             "fetchpriority": "auto"
           }
@@ -101,10 +99,8 @@
         "b19fdcf2-0352-46de-a5e4-0b33482e0155": {
           "type": "Image",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/StaffFavorites-900x500_84f091e5-9bef-4654-bd0a-d53ee51bba6a.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/StaffFavorites-900x900_44261296-5b67-4062-98d1-2c54899b0f13.jpg",
             "title": "",
-            "url": "shopify:\/\/collections\/staff-favorites",
+            "url": "shopify://collections/staff-favorites",
             "loading": "default",
             "fetchpriority": "auto"
           }
@@ -128,7 +124,7 @@
         "collection_1": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "power-stations"
           }
         },
         "collection_2": {
@@ -243,7 +239,7 @@
       "type": "section-newsletter-form",
       "settings": {
         "title": "SIGN UP FOR OUR WEEKLY NEWSLETTER",
-        "content": "<p>Get special offers and discounts straight to your inbox.<\/p>"
+        "content": "<p>Get special offers and discounts straight to your inbox.</p>"
       }
     }
   },
