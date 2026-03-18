@@ -165,67 +165,6 @@
       }
     },
     "content_for_index": [],
-    "blocks": {
-      "7570552984445421165": {
-        "type": "shopify://apps/yotpo-product-photo-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-        "disabled": true,
-        "settings": {}
-      },
-      "15685250022964305326": {
-        "type": "shopify://apps/elevar-conversion-tracking/blocks/dataLayerEmbed/bc30ab68-b15c-4311-811f-8ef485877ad6",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "1718602553936663049": {
-        "type": "shopify://apps/boyzsh-cart-drawer/blocks/cart_drawer/019c1db7-d0f2-794b-aab6-b13bb0a145fd",
-        "disabled": true,
-        "settings": {
-          "title": "Your cart",
-          "drawer_width": 420,
-          "auto_open": true,
-          "background_color": "#ffffff",
-          "text_color": "#333333",
-          "border_color": "#e5e5e5",
-          "footer_background": "#fafafa",
-          "checkout_bg_color": "#000000",
-          "checkout_text_color": "#ffffff",
-          "sale_price_color": "#b12704",
-          "subtotal_text": "Estimated subtotal",
-          "taxes_text": "Taxes and shipping calculated at checkout",
-          "checkout_text": "Checkout",
-          "view_cart_text": "View cart",
-          "product_label": "PRODUCT",
-          "total_label": "TOTAL",
-          "empty_text": "Your cart is currently empty.",
-          "continue_text": "Continue shopping",
-          "enable_free_shipping": true,
-          "shipping_sections_count": "1",
-          "shipping_section_1_value": 9900,
-          "shipping_section_1_label": "FREE SHIPPING",
-          "shipping_section_2_value": 7800,
-          "shipping_section_2_label": "FREE SHIPPING",
-          "shipping_section_3_value": 11900,
-          "shipping_section_3_label": "$15 DISCOUNT",
-          "shipping_message": "Spend another ##value## to get ##label##!",
-          "shipping_success_message": "You've unlocked all rewards!",
-          "shipping_bar_color": "#22c55e",
-          "shipping_bar_fill_color": "#ffffff",
-          "enable_recommendations": true,
-          "recommendations_title": "You may also like",
-          "recommendations_limit": 10,
-          "recommendations_scrollable_mobile": true,
-          "recommendations_add_text": "+ Add",
-          "recommendations_bg_color": "#f5f5f5",
-          "recommendations_card_bg_color": "#ffffff",
-          "show_discount_code": true
-        }
-      }
-    },
     "color_schemes": {
       "background-1": {
         "settings": {
