@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "56830130-7e04-4ce2-a2b4-9aa0ed2e3308": {
+          "type": "filter_item",
+          "settings": {
+            "title": "Color",
+            "filter_string": "#.color:"
+          }
+        },
+        "693ae4a7-e2e0-4f65-9afc-3c5b6d5feaed": {
+          "type": "filter_item",
+          "settings": {
+            "title": "Material",
+            "filter_string": "#.material:"
+          }
+        },
+        "c3fe85a3-9019-4c80-a620-b65ae5f82765": {
+          "type": "filter_item",
+          "settings": {
+            "title": "Width / Diameter",
+            "filter_string": "#.width_/_diameter:"
+          }
+        },
+        "5dc7f942-0aaf-413c-909d-0d53f887dd1b": {
+          "type": "filter_item",
+          "settings": {
+            "title": "Item Insertable Length Range",
+            "filter_string": "#.item_insertable_length_range:"
+          }
+        },
+        "1b05fd3d-d593-4cd3-8c8e-83a2ceecc8d2": {
+          "type": "filter_item",
+          "settings": {
+            "title": "Unit Price",
+            "filter_string": "#.unit_price:"
+          }
+        }
+      },
+      "block_order": [
+        "56830130-7e04-4ce2-a2b4-9aa0ed2e3308",
+        "693ae4a7-e2e0-4f65-9afc-3c5b6d5feaed",
+        "c3fe85a3-9019-4c80-a620-b65ae5f82765",
+        "5dc7f942-0aaf-413c-909d-0d53f887dd1b",
+        "1b05fd3d-d593-4cd3-8c8e-83a2ceecc8d2"
+      ],
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "select",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
+}

@@ -45,7 +45,7 @@
         "b8eeb731-c576-439a-8880-87deb8538c9a"
       ],
       "settings": {
-        "background-color": "#1d245b",
+        "background-color": "#1a1a1a",
         "text-color": "#ffffff",
         "enable_links": false,
         "link-title-1": "",
@@ -90,7 +90,7 @@
         "7ff1040f-ec96-446e-8462-e77d5f15cc53"
       ],
       "settings": {
-        "bg_color": "#1d245b",
+        "bg_color": "#1a1a1a",
         "text_color": "#ffffff",
         "footer_logo": "shopify:\/\/shop_images\/BoyzShop-Footer-Logo-White-Transparent.png",
         "contact_cta": "",
@@ -100,8 +100,8 @@
     "cd663c80-0fe6-4ee3-b698-103e1eb3db0c": {
       "type": "footer-rights",
       "settings": {
-        "bg_color": "#1d245b",
-        "footer-text": "All rights reserved. All models appearing on the website were at least 18 years of age on the date of principal photography. <a href=\"\/pages\/terms-use\" class=\"cont-info\"> 18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement<\/a>",
+        "bg_color": "#1a1a1a",
+        "footer-text": "All rights reserved. Power Camp - Portable Power Solutions.",
         "show_payment_icons": true,
         "paypal_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-paypal-2.png?14638",
         "mastercard_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-mastercard-2.png?14638",

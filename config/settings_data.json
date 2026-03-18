@@ -140,7 +140,7 @@
     "free_shipping_message": "Free shipping when you spend ##value## more.",
     "free_shipping_Success": "You got free shipping.",
     "free_shipping_value": 9900,
-    "shipping_bar_fill_color": "#05aff2",
+    "shipping_bar_fill_color": "#22c55e",
     "enable_recommendations": true,
     "recommendations_title": "You may also like",
     "recommendations_limit": 10,
@@ -213,7 +213,7 @@
           "shipping_section_3_label": "$15 DISCOUNT",
           "shipping_message": "Spend another ##value## to get ##label##!",
           "shipping_success_message": "You've unlocked all rewards!",
-          "shipping_bar_color": "#05aff2",
+          "shipping_bar_color": "#22c55e",
           "shipping_bar_fill_color": "#ffffff",
           "enable_recommendations": true,
           "recommendations_title": "You may also like",
@@ -231,55 +231,55 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
+          "text": "#1a1a1a",
+          "button": "#2d2d2d",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#1a1a1a"
         }
       },
       "background-2": {
         "settings": {
-          "background": "#f3f3f3",
+          "background": "#f0f2f0",
           "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
-          "button_label": "#f3f3f3",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "text": "#1a1a1a",
+          "button": "#2d2d2d",
+          "button_label": "#f0f2f0",
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#1a1a1a"
         }
       },
       "inverse": {
         "settings": {
-          "background": "#242833",
+          "background": "#1a1a1a",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#000000",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "text": "#f5f5f5",
+          "button": "#22c55e",
+          "button_label": "#1a1a1a",
+          "secondary_button_label": "#f5f5f5",
+          "shadow": "#000000"
         }
       },
       "accent-1": {
         "settings": {
-          "background": "#121212",
+          "background": "#2d2d2d",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#121212",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "text": "#f5f5f5",
+          "button": "#22c55e",
+          "button_label": "#1a1a1a",
+          "secondary_button_label": "#22c55e",
+          "shadow": "#000000"
         }
       },
       "accent-2": {
         "settings": {
-          "background": "#334fb4",
+          "background": "#22c55e",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#334fb4",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "text": "#1a1a1a",
+          "button": "#1a1a1a",
+          "button_label": "#22c55e",
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#000000"
         }
       }
     }
