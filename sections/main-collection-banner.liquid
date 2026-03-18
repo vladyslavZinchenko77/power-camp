@@ -1,0 +1,122 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    {% include 'breadcrumbs' %}
+  </div>
+  
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    {% if section.settings.show_collection_title %}
+      <div class="collection-hero__text-wrapper">
+        <h1 class="collection-hero__title">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title -}}
+        </h1>
+
+        {%- comment -%}
+        {%- if section.settings.show_collection_description and collection.description != blank -%}
+          <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {%- endif -%}
+        {%- endcomment -%}
+      </div>
+    {% endif %}
+
+    {%- if section.settings.show_collection_image -%}
+      {% if collection.metafields.custom.desktop_banner_image != blank %}
+        <div class="collection-banner">
+            {%- render 'responsive-image', 
+            object_image: collection.metafields.custom.desktop_banner_image.value,
+            mobile_image: collection.metafields.custom.mobile_banner_image.value,
+            class: 'o-ar__banner',
+            img_class: "o-ar__item",
+            aspect_ratio: true,
+            mobile_ratio: '600/600',
+            loading: 'eager'
+            -%}
+        </div>
+      {% endif %}
+    {%- endif -%}
+
+    {% include "settings.shopify" %}
+    
+    {% if linklists[collection.handle].links.size > 0 %}
+      <div class="collection__categories">
+        {% for link in linklists[collection.handle].links %}
+          {% if link.title contains '#' %}
+            {% assign image_desktop = link.title | split: '#' | last | file_img_url: "600x" %}
+            {% assign image_mobile = link.title | split: '#' | last | file_img_url: "600x" %}
+            {% assign link_title = link.title | split: '#' | first %}
+          {% else %}
+            {% assign image_desktop = collections[link.object.handle].image | img_url: '600x' %}
+            {% assign image_mobile = collections[link.object.handle].image | img_url: '600x' %}
+            {% assign link_title = link.title %}
+          {% endif %}
+          <a href="{{ link.url }}">
+            <div class="collection__categories--item">
+              <div class="collection__categories--item-image">
+                <picture>
+                  <source media="(min-width: {{ breakpoint_desktop }})" srcset="{{ image_desktop }}" />
+                  <source media="(min-width: {{ breakpoint_tablet }})" srcset="{{ image_desktop }}" />
+                  <source media="(min-width: {{ breakpoint_mobile }})" srcset="{{ image_mobile }}" />
+                  <img src="{{ image_mobile }}" alt="{{ link_title }}">
+                </picture>
+              </div>
+              <label class="collection__categories--item-info">
+                <span class='visually-hidden'>Browse </span>
+                {{ link_title }}
+              </label>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_title",
+      "label": "Show Collection Title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ]
+}
+{% endschema %}

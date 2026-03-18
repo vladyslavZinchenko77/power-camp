@@ -1,0 +1,171 @@
+<style type="text/css">
+    *, html {
+        scroll-behavior: smooth !important;
+    }
+    .product-item-image {
+        object-fit: contain;
+        aspect-ratio: 1;
+    }
+    .o-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        image-rendering: auto;
+        transform: translate(-50%, -50%);
+    }
+    
+    .o-img--contain {
+        object-fit: contain;
+    }
+
+    .o-img__frame {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .o-img--fill {
+        width: 100%;
+        height: 100%;
+    }
+
+    .o-ar {
+        aspect-ratio: var(--mob-aspect-ratio);
+    }
+
+    .o-ar__item {
+        width: 100%;
+        height: 100%;
+    }
+
+    .o-ar--square {
+        aspect-ratio: 1;
+    }
+
+    .o-ar__gallery {
+        width: 100%;
+        margin: auto;
+        height: 100%;
+    }
+
+    .isp-colletion-container .sku-container {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        .o-ar {
+            aspect-ratio: var(--aspect-ratio);
+        }
+    }
+
+    .currency-wrapper {
+        position: relative;
+        padding-left: 0 !important;
+    }
+    .currency-wrapper select {
+        display: none;
+    }
+    .currency-wrapper .drop.show .list {
+        display: flex !important;
+    }
+    .currency-wrapper .drop .list {
+        position: absolute;
+        top: 100%;
+        right: -21px;
+        width: 200px;
+        background: #fff;
+        padding: 10px 0px 0 20px;
+        display: none;
+        flex-wrap: wrap;
+        box-shadow: 0px 3px 10px 1px #ccc;
+        margin-top: -3px;
+        display: none;
+    }
+    .currency-wrapper .drop .list > * {
+        width: 50%;
+        color: #000;
+    }
+    .currency-wrapper .drop .selected {
+        padding-right: 10px;
+        margin-top: 14px;
+    }
+    .currency-wrapper .drop .selected + svg {
+        position: absolute;
+        width: 9px;
+        top: 29px;
+        right: 5px;
+        pointer-events: none;
+    }
+    .currency-wrapper .drop .selected [data-cur] {
+        color: #fff;
+    }
+    .currency-wrapper [data-cur] {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+    .currency-wrapper [data-cur]:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-size: auto 105%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+    .currency-wrapper [data-cur="AUD"]:before {
+        background-image: url(flag-aud.svg);
+    }
+    .currency-wrapper [data-cur="BRL"]:before {
+        background-image: url(flag-brl.svg);
+    }
+    .currency-wrapper [data-cur="CAD"]:before {
+        background-image: url(flag-cad.svg);
+    }
+    .currency-wrapper [data-cur="CHF"]:before {
+        background-image: url(flag-chf.svg);
+    }
+    .currency-wrapper [data-cur="DKK"]:before {
+        background-image: url(flag-dkk.svg);
+    }
+    .currency-wrapper [data-cur="EUR"]:before {
+        background-image: url(flag-eur.svg);
+    }
+    .currency-wrapper [data-cur="GBP"]:before {
+        background-image: url(flag-gbp.svg);
+    }
+    .currency-wrapper [data-cur="HKD"]:before {
+        background-image: url(flag-hkd.svg);
+    }
+    .currency-wrapper [data-cur="NOK"]:before {
+        background-image: url(flag-nok.svg);
+    }
+    .currency-wrapper [data-cur="NZD"]:before {
+        background-image: url(flag-nzd.svg);
+    }
+    .currency-wrapper [data-cur="SEK"]:before {
+        background-image: url(flag-sek.svg);
+    }
+    .currency-wrapper [data-cur="USD"]:before {
+        background-image: url(flag-usd.svg);
+    }
+    .currency-wrapper [data-cur="ZAR"]:before {
+        background-image: url(flag-zar.svg);
+    }
+    .currency-wrapper [data-cur="YEN"]:before {
+        background-image: url(flag-yen.svg);
+        border: 1px solid #cccccc;
+    }
+    html[data-currency=USD] .min_shipping_msg .currency-wrapper {
+        display: none;
+    }
+</style>

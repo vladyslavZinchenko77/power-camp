@@ -1,0 +1,28 @@
+{% comment %}
+  Cart Drawer Recommendations Panel (Desktop)
+  Renders the "You may also like" product recommendations panel
+  positioned to the left of the cart drawer.
+{% endcomment %}
+
+{% if settings.enable_recommendations %}
+  <div
+    class="cart-drawer-recommendations"
+    data-recommendations-panel
+    data-limit="{{ settings.recommendations_limit | default: 6 }}"
+    data-add-text="{{ settings.recommendations_add_text | default: '+ Add' }}"
+    data-money-format="{{ shop.money_format }}"
+    data-recommendations-scrollable-mobile="{{ settings.recommendations_scrollable_mobile }}"
+    style="
+      --cart-recommendations-bg: {{ settings.recommendations_bg_color | default: '#f5f5f5' }};
+      --cart-recommendations-card-bg: {{ settings.recommendations_card_bg_color | default: '#ffffff' }};
+      {% if cart.item_count == 0 %}display: none;{% endif %}
+    "
+  >
+    <h3 class="cart-drawer-recommendations__title">
+      {{ settings.recommendations_title | default: 'You may also like' }}
+    </h3>
+    <div class="cart-drawer-recommendations__list" data-recommendations-list>
+      <div class="cart-drawer-recommendations__loader"></div>
+    </div>
+  </div>
+{% endif %}

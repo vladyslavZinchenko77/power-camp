@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "b5a347b4-cd57-46a6-94dc-5eb55a3e72fa": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Contact Us",
+            "link": "shopify:\/\/pages\/contact-us-1"
+          }
+        },
+        "9922e78b-8f2d-402b-b887-df9ff38b2b7d": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Satisfaction Guaranteed",
+            "link": "shopify:\/\/pages\/satisfaction-guaranteed"
+          }
+        },
+        "4d49fa15-0ac4-4545-8a05-aaadda5e3548": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "About us",
+            "link": "shopify:\/\/pages\/about-us"
+          }
+        },
+        "98b09a0e-b040-4dc4-ae7b-07e5bb68b7ea": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Shipping Information",
+            "link": "shopify:\/\/pages\/shipping-information-1"
+          }
+        },
+        "19ed7b18-9a29-481f-87cc-932bf5fa2c4d": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Product Info & Troubleshooting",
+            "link": "shopify:\/\/pages\/product-info-troubleshooting"
+          }
+        },
+        "a9d64645-17bd-4c47-ab8c-ce5893c4bd21": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Frequently Asked Questions",
+            "link": "shopify:\/\/pages\/frequently-asked-questions"
+          }
+        },
+        "5523fb9e-841f-4414-b71b-67e5b635770d": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Online & Mail Orders",
+            "link": "shopify:\/\/pages\/online-mail-orders"
+          }
+        },
+        "5c136e2b-55c2-47b2-bb08-3be06e9bb4c4": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Privacy Policy",
+            "link": "shopify:\/\/pages\/privacy-policy-combined"
+          }
+        },
+        "a4de13cb-a20c-453e-9596-8d59e1ddd714": {
+          "type": "sidebar_item",
+          "settings": {
+            "title": "Terms of Service",
+            "link": "shopify:\/\/pages\/terms-of-service"
+          }
+        }
+      },
+      "block_order": [
+        "b5a347b4-cd57-46a6-94dc-5eb55a3e72fa",
+        "9922e78b-8f2d-402b-b887-df9ff38b2b7d",
+        "4d49fa15-0ac4-4545-8a05-aaadda5e3548",
+        "98b09a0e-b040-4dc4-ae7b-07e5bb68b7ea",
+        "19ed7b18-9a29-481f-87cc-932bf5fa2c4d",
+        "a9d64645-17bd-4c47-ab8c-ce5893c4bd21",
+        "5523fb9e-841f-4414-b71b-67e5b635770d",
+        "5c136e2b-55c2-47b2-bb08-3be06e9bb4c4",
+        "a4de13cb-a20c-453e-9596-8d59e1ddd714"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 28,
+        "heading": "Customer Service"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

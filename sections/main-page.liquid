@@ -1,0 +1,133 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding page-container">
+  <div class="rte{% if template == 'page.customize' %} w-full {% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {{ page.content }}
+  </div>
+  
+  {% unless template == 'page.customize' %}
+    {% if section.blocks.size > 0 %}
+      <div class="page-sidebar">
+        {% if section.settings.heading != blank %}
+          <h1>{{ section.settings.heading }}</h1>  
+        {% endif %}
+        
+        <div class="page-sidebar__content">
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank and block.settings.link != blank %}
+              <a href="{{ block.settings.link }}">
+                {{ block.settings.title }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>  
+    {% endif %}
+  {% endunless %}
+</div>
+
+{% comment %}
+{% if template == 'page.customize' %}
+  <div class="promotion-container" js-promotion-container></div>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        const imageElements = document.querySelectorAll('.collection__categories--item-image');
+        const promotionContainer = document.querySelector('.promotion-container');
+
+        if (imageElements) {
+          imageElements.forEach((element, index) => {
+            const imageContainer = element.querySelector('img');
+            let createName = imageContainer.getAttribute('alt') + '_SFW';
+            let creativeSlot = 'Thumbnails';
+            let locationId = `Six_thumbnails_${index+1}_SFW`;
+            let promotionName = locationId + '-{{ page_title }}_SFW';
+            let promotionId = `{{ page_title }}_thumbnail_${index}_SFW`;
+
+            let promotionElement = element.closest('a');
+            promotionElement.setAttribute('data-promotion', '');
+            promotionElement.setAttribute('data-creative-name', createName);
+            promotionElement.setAttribute('data-creative-slot', creativeSlot);
+            promotionElement.setAttribute('data-location-id', locationId);
+            promotionElement.setAttribute('data-promotion-id', promotionId);
+            promotionElement.setAttribute('data-promotion-name', promotionName);
+          });
+        }
+      });
+    </script>
+{% endif %}
+{% endcomment %}
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Page sidebar"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Service"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sidebar_item",
+      "name": "Sidebar Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

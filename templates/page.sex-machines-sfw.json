@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 28,
+        "heading": ""
+      }
+    },
+    "image_grid_eJyUme": {
+      "type": "image-grid",
+      "blocks": {
+        "image_cVAppF": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesMilking2-600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesMilking2-600cat.jpg",
+            "title": "Masturbation & Milking Machines",
+            "url": "shopify:\/\/collections\/automatic-sucking-stroking-machines",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        },
+        "image_zKnGkd": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesthrusting-600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesthrusting-600cat.jpg",
+            "title": "Thrusting Sex Machines",
+            "url": "shopify:\/\/collections\/thrusting-fucking-machines",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        },
+        "image_6ej698": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesRiding-2-600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesRiding-2-600cat.jpg",
+            "title": "Riding Sex Machines",
+            "url": "shopify:\/\/collections\/riding-fucking-machines",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        },
+        "image_RezyXJ": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesAttachments-600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesAttachments-600cat.jpg",
+            "title": "Sex Machine Attachments & Accessories",
+            "url": "shopify:\/\/collections\/fucking-machine-attachments-accessories",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        },
+        "image_CLdCpn": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesDildoRodsStockades600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesDildoRodsStockades600cat.jpg",
+            "title": "Dildo Rods & Stockades",
+            "url": "shopify:\/\/collections\/dildo-rods-stockades",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        },
+        "image_Hc8bzD": {
+          "type": "Image",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/SexMachinesHandheld-2-600cat.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SexMachinesHandheld-2-600cat.jpg",
+            "title": "Handheld Sex Machines",
+            "url": "shopify:\/\/collections\/handheld-fucking-machines",
+            "loading": "eager",
+            "fetchpriority": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "image_cVAppF",
+        "image_zKnGkd",
+        "image_6ej698",
+        "image_RezyXJ",
+        "image_CLdCpn",
+        "image_Hc8bzD"
+      ],
+      "custom_css": [
+        ".image-grid__title {margin: 10px 0 !important;}",
+        ".o-ar__item {border: 1px solid #ddd;}"
+      ],
+      "settings": {
+        "desktop_space": 0,
+        "mobile_space": 0,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "width": "box"
+      }
+    },
+    "custom_liquid_NgC8Dj": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".button_container {background-color: #05aff2; display: inline-block; margin: 5px; text-decoration: none !important;}",
+        ".shopbutton {display: inline-block; padding: 10px 45px; border-radius: 10px; color: white; font-size: 2rem; font-weight: bold; letter-spacing: 3px;}",
+        ".button_container:hover {background-color: #1d245b;}"
+      ],
+      "settings": {
+        "custom_liquid": "<center>\n<div class=\"button_container\">\n<a href=\"https:\/\/www.boyzshop.com\/collections\/fucking-machines#shopify-section-template--24082229363051__product-grid\">\n<div class=\"shopbutton\">SEE ALL SEX MACHINES<\/div>\n<\/a>\t\t\t\t\t\n<\/div>\n<\/center>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_grid_eJyUme",
+    "custom_liquid_NgC8Dj"
+  ]
+}

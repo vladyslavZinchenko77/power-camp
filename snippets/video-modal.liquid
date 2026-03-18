@@ -1,0 +1,102 @@
+<div class="product-video__modal hidden" js-video-modal>
+  <div class="product-video__modal-close" js-video-close-content>
+    <span class="video-close-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z"></path></svg>
+    </span>
+  </div>
+
+  <div class="product-video__modal-content" js-video-content>
+  </div>
+</div>
+
+<script>
+  const videoModal = document.querySelector('[js-video-modal]');
+  const videoCloseContent = document.querySelector('[js-video-close-content]');
+  const videoContent = document.querySelector('[js-video-content]');
+  const videoButton = document.querySelector('[js-product-video-url]');
+
+  if (videoButton) {
+    videoButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = videoButton.getAttribute('data-video-url');
+      
+      if (videoContent) {
+        videoModal.classList.remove('hidden');
+        const html = `
+          <video playsinline="playsinline" autoplay controls="controls" preload="metadata" aria-label="7X P-Milker Silicone Prostate Stimulator with Milking Bead">
+            <source 
+              src="${url}" 
+              type="video/mp4"/>
+          </video>
+        `;
+
+        videoContent.innerHTML = html;
+      }
+    });
+  }
+
+  if (videoCloseContent) {
+    videoCloseContent.addEventListener('click', (e)=> {
+      e.preventDefault();
+
+      videoModal.classList.add('hidden');
+
+      const video = videoContent.querySelector('video');
+      if (video) {
+        video.pause();
+      }
+    });
+  }
+</script>
+
+<style>
+  .product-video__modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .product-video__modal-close {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000069;
+  }
+
+  .video-close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(30,30,30,.6);
+    cursor: pointer;
+  }
+
+  .video-close-btn svg {
+    fill: #fff;
+  }
+
+  .product-video__modal-content {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-video__modal-content video {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,89 @@
+{%- liquid
+    assign image_srcset_array = "180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048" | split: ','
+    assign mob_srcset_array = "75,100,150,360,420,540" | split: ','
+    assign pjpg_image = false
+    assign aspect_ratio = aspect_ratio | default: false, allow_false: true
+    assign height = height | default: object_image.height | at_most: 900
+    assign fit = fit | default: 'cover' | prepend: '  o-img--'
+    assign mobile_ratio = mobile_ratio | default: "366/488"
+
+    if aspect_ratio == true
+        assign desktop_ratio = object_image.width | append: '/' | append: object_image.height
+    else
+        assign desktop_ratio = width | append: '/' | append: height
+    endif
+
+    if use_desktop_ratio == true 
+        assign mobile_ratio = desktop_ratio
+    endif
+
+    if width == "auto" or width == null
+        assign width = "1440" | plus: 0
+    else
+        assign width = width | plus: 0
+    endif
+
+    # generates image srcset for desktop
+    capture image_srcset
+        if width == "icon"
+            echo object_image | image_url: "icon"
+        else
+            for srcset_width in image_srcset_array
+                assign xWidth = srcset_width | append: 'x'
+                assign srcset_num = srcset_width | plus: 0
+
+                if pjpg_image
+                    echo object_image | image_url: width: xWidth, format: 'pjpg' | append: ' ' | append: srcset_width | append: 'w, '
+                else
+                    echo object_image | image_url: width: xWidth | append: ' ' | append: srcset_width | append: 'w, '
+                endif
+
+                if srcset_num >= width
+                    break
+                endif
+            endfor
+        endif
+    endcapture
+
+    if mobile_image != blank
+        assign mobile_image = mobile_image
+    else
+        assign mobile_image = object_image
+    endif
+
+    # Generates image srcset for mobile
+    capture mobile_srcset
+        for mob_srcset in mob_srcset_array
+            assign xWidth = mob_srcset | append: 'x'
+            assign srcset_num = mob_srcset | plus: 0
+
+            echo mobile_image | image_url: width: xWidth | append: ' ' | append: mob_srcset | append: 'w, '
+
+            if srcset_num >= width
+                break
+            endif
+        endfor
+    endcapture
+-%}
+
+<picture 
+    class="o-img__frame  o-ar  {{ class }}"
+    style="--aspect-ratio:{{ desktop_ratio }}; --mob-aspect-ratio:{{ mobile_ratio }};"
+>
+
+    <source data-desk media="(min-width: 768px)" srcset="{{ image_srcset | strip_newlines | strip }}">
+
+    <source data-mob srcset="{{ mobile_srcset | strip_newlines | strip }}">
+
+    <img
+        class="o-img   {{ fit }}  {{ img_class }}"
+        style="object-position: {{ x_position | default: '50' | append: '%' }} {{ y_position | default: '50' | append: '%' }};"
+        src="{{ object_image | image_url: width: 1, height: 1, crop: 'center' }}"
+        alt="{{ object_image.alt }}"
+        {% if loading != 'default' %}loading="{{ loading }}"{% endif %}
+        {% if fetchpriority != 'auto' %}fetchPriority="{{ fetchpriority }}"{% endif %}
+        decoding="auto"
+        width="{{ width }}"
+        height="{{ height }}"
+    />
+</picture>
