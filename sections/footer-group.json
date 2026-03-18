@@ -106,6 +106,33 @@
         "contact_url": ""
       }
     },
+    "footer_reviews": {
+      "type": "x-footer-reviews",
+      "blocks": {
+        "google_badge": {
+          "type": "review_badge",
+          "settings": {
+            "platform": "google",
+            "count_text": "Based on 73 reviews"
+          }
+        },
+        "facebook_badge": {
+          "type": "review_badge",
+          "settings": {
+            "platform": "facebook",
+            "count_text": "Based on 219 reviews"
+          }
+        }
+      },
+      "block_order": [
+        "google_badge",
+        "facebook_badge"
+      ],
+      "settings": {
+        "bg_color": "#2d2d2d",
+        "text_color": "#ffffff"
+      }
+    },
     "cd663c80-0fe6-4ee3-b698-103e1eb3db0c": {
       "type": "footer-rights",
       "settings": {
@@ -140,6 +167,7 @@
   "order": [
     "19e71002-8b0e-453e-84f7-19aa57d9b21e",
     "7941ee74-630d-45f6-8257-8a4d7b04335d",
+    "footer_reviews",
     "cd663c80-0fe6-4ee3-b698-103e1eb3db0c",
     "footer"
   ]

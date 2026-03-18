@@ -255,6 +255,82 @@
         "padding_bottom": 36
       }
     },
+    "testimonials_carousel": {
+      "type": "x-testimonials-carousel",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "The blade takes and keeps a razor sharp edge that makes carving a dream. Strongly recommended!",
+            "author": "John Murray"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "I have numerous tools, every one of them came razor sharp and ready to use straight out of the box. Very good quality.",
+            "author": "Tina Hammond"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "All of the tools I have ordered have been reasonably priced and generally exceeded my expectations. Highly recommend!",
+            "author": "Don Smerker"
+          }
+        },
+        "testimonial_4": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "google",
+            "rating": 5,
+            "text": "Super fast shipping and the product quality is outstanding. Will definitely be ordering again soon!",
+            "author": "Mike Reynolds"
+          }
+        },
+        "testimonial_5": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "google",
+            "rating": 5,
+            "text": "Excellent customer service. Had a question about my order and they responded within an hour. Great experience overall.",
+            "author": "Sarah Chen"
+          }
+        },
+        "testimonial_6": {
+          "type": "testimonial",
+          "settings": {
+            "platform": "trustpilot",
+            "rating": 5,
+            "text": "Best prices I've found online and the quality is top notch. Packaging was discreet and delivery was quick. 10/10!",
+            "author": "Alex Thompson"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3",
+        "testimonial_4",
+        "testimonial_5",
+        "testimonial_6"
+      ],
+      "settings": {
+        "title": "WHAT OUR CUSTOMERS SAY",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "author_color": "#22c55e",
+        "star_color": "#f5a623",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
     "08370bc9-8552-4396-86cb-0d5ef007c92b": {
       "type": "section-newsletter-form",
       "settings": {
@@ -271,6 +347,7 @@
     "collection_list_main",
     "featured_collection_2",
     "featured_collection_3",
+    "testimonials_carousel",
     "08370bc9-8552-4396-86cb-0d5ef007c92b"
   ]
 }

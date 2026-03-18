@@ -1,0 +1,219 @@
+{%- style -%}
+  .x-footer-reviews-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding: 48px 0;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(1) { color: #4285F4; }
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(2) { color: #EA4335; }
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(3) { color: #FBBC05; }
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(4) { color: #4285F4; }
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(5) { color: #34A853; }
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__google-text span:nth-child(6) { color: #EA4335; }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__reviews-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: {{ section.settings.text_color }};
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__star {
+    color: #f5a623;
+    font-size: 1.3rem;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__star--half {
+    color: #f5a623;
+    font-size: 1.3rem;
+    opacity: 0.5;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__facebook-text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    line-height: 1;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__fb-stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__fb-star {
+    width: 28px;
+    height: 28px;
+    background: #1877F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .x-footer-reviews-{{ section.id }} .x-footer-reviews__count {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    margin-top: 4px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .x-footer-reviews-{{ section.id }} .x-footer-reviews__wrapper {
+      gap: 40px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="x-footer-reviews-{{ section.id }}">
+  <div class="page-width">
+    <div class="x-footer-reviews__wrapper">
+      {%- for block in section.blocks -%}
+        <div class="x-footer-reviews__item" {{ block.shopify_attributes }}>
+          {%- case block.settings.platform -%}
+            {%- when 'google' -%}
+              <div class="x-footer-reviews__logo">
+                <div class="x-footer-reviews__google-text">
+                  <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+                </div>
+                <div class="x-footer-reviews__reviews-label">
+                  Reviews
+                  <span class="x-footer-reviews__stars">
+                    <span class="x-footer-reviews__star">&#9733;</span>
+                    <span class="x-footer-reviews__star">&#9733;</span>
+                    <span class="x-footer-reviews__star">&#9733;</span>
+                    <span class="x-footer-reviews__star">&#9733;</span>
+                    <span class="x-footer-reviews__star--half">&#9733;</span>
+                  </span>
+                </div>
+              </div>
+
+            {%- when 'facebook' -%}
+              <div class="x-footer-reviews__logo">
+                <div class="x-footer-reviews__facebook-text">facebook</div>
+                <div class="x-footer-reviews__fb-stars">
+                  <span class="x-footer-reviews__fb-star">&#9733;</span>
+                  <span class="x-footer-reviews__fb-star">&#9733;</span>
+                  <span class="x-footer-reviews__fb-star">&#9733;</span>
+                  <span class="x-footer-reviews__fb-star">&#9733;</span>
+                  <span class="x-footer-reviews__fb-star">&#9733;</span>
+                </div>
+              </div>
+          {%- endcase -%}
+
+          {%- if block.settings.count_text != blank -%}
+            <p class="x-footer-reviews__count">{{ block.settings.count_text | escape }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "x-Footer reviews",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "default": "#2d2d2d",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#ffffff",
+      "label": "Text color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_badge",
+      "name": "Review badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "platform",
+          "options": [
+            { "value": "google", "label": "Google Reviews" },
+            { "value": "facebook", "label": "Facebook Reviews" }
+          ],
+          "default": "google",
+          "label": "Platform"
+        },
+        {
+          "type": "text",
+          "id": "count_text",
+          "default": "Based on 73 reviews",
+          "label": "Review count text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "x-Footer reviews",
+      "blocks": [
+        {
+          "type": "review_badge",
+          "settings": {
+            "platform": "google",
+            "count_text": "Based on 73 reviews"
+          }
+        },
+        {
+          "type": "review_badge",
+          "settings": {
+            "platform": "facebook",
+            "count_text": "Based on 219 reviews"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
