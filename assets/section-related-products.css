@@ -1,0 +1,37 @@
+.related-products {
+  display: block;
+}
+
+.related-products__heading {
+  position: relative;
+  padding: 0 20px;
+  display: flex;
+  background: white;
+  max-width: 100%;
+  text-transform: uppercase;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.related-products__heading span {
+  z-index: 2;
+  background: #fff;
+  padding: 0 20px;
+  color: #333;
+}
+
+h2.related-products__heading.inline-richtext.h2::after {
+  display: block;
+  content: " ";
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: #111;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

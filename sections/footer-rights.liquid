@@ -1,0 +1,82 @@
+<section class="footer-copyright nospacing no-margin" data-section-id="{{ section.id }}" data-section-type="FooterCopyright" style="background-color: {{ section.settings.bg_color }};">
+  <div class="full-width">
+    <article class="footer-copyright__container">
+      <div class="text">{{ section.settings.footer-text }}</div>
+      {% if section.settings.show_payment_icons %}
+      <div class="payment-container">
+        <div class="payment-icons">
+          {% if section.settings.paypal_payment %}
+          <img class='lazy' src="{{ section.settings.paypal_payment }}" width="35" height="35" alt="paypal" />
+          {% endif %}
+          {% if section.settings.visa_payment %}
+          <img class='lazy' src="{{ section.settings.visa_payment }}" width="35" height="35" alt="visa"/>
+          {% endif %}
+          {% if section.settings.mastercard_payment %}
+          <img class='lazy' src="{{ section.settings.mastercard_payment }}" width="35" height="35" alt="mastercard"/>
+          {% endif %}
+          {% if section.settings.amex_payment %}
+          <img class='lazy' src="{{ section.settings.amex_payment }}" width="35" height="35" alt="amex"/>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </article>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Footer copyright",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Footer copyright Text"
+      },
+      {
+        "type": "textarea",
+        "id": "footer-text",
+        "label": "Footer Copyright Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show Payment Icons",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "paypal_payment",
+        "label": "Paypal Image"
+      },
+      {
+        "type": "text",
+        "id": "mastercard_payment",
+        "label": "Mastercard Image"
+      },
+      {
+        "type": "text",
+        "id": "visa_payment",
+        "label": "VISA Image"
+      },
+      {
+        "type": "text",
+        "id": "amex_payment",
+        "label": "Amex Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer copyright",
+        "category": "Footer",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,812 @@
+<script>
+  var collection_filters = [
+      {
+        handles: ["default"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Flesh Toned", "Gold", "Green", "Grey", "Multi", "Orange", "Pink", "Purple", "Red", "Silver", "Tan", "White", "Wood", "Yellow"],
+          "Material": ["ABS", "Acrylic", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Brass", "Bronze", "Canvas", "Chrome", "Chrome Plated Brass", "Chrome Plated Alloy", "Chrome Plated Steel", "Copper", "Cotton", "Cowhide Leather", "Elastic", "Fabric", "Faux Fur", "Faux Leather", "Feather", "Felt", "Fiber", "Fleece", "Foam", "Fur", "Glass", "Hemp", "Iron", "Jelly Rubber", "Latex", "Leather", "Magnet", "Metal", "Metal Coated Magnet", "natural Rubber", "Neoprene", "nickel-free Metal", "Nylon", "PC", "PE", "Plastic", "Plated Brass", "Polycarbonate", "Polyester", "Polyurethane", "PP", "PS", "PU", "PU Leather", "PVC", "RBS-E Glass batten", "Rubber", "Silicone", "Spandex", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl", "Wood"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      },
+      {
+        handles: ["beads-balls"],
+        filters: {
+          "Color": ["Black", "Grey", "Purple", "Green", "Pink", "Clear"],
+          "Material": ["ABS", "Borosilicate Glass", "Glass", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      },
+      {
+        handles: ["classic-butt-plugs"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Grey", "Pink", "Purple", "Red", "Gold", "Orange"],
+          "Material": ["ABS", "Borosilicate Glass", "Glass", "PVC", "Plastic", "Rubber", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$100-$149.99"]
+        }
+      },
+      {
+        handles: ["inflatable-butt-plugs"],
+        filters: {
+          "Color": ["Black", "Brown"],
+          "Material": ["ABS", "Foam", "Latex", "Metal", "Rubber", "Silicone", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      },
+      {
+        handles: ["silicone-butt-plugs"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Grey", "Pink", "Purple", "White", "Orange"],
+          "Material": ["ABS", "Faux Fur", "Glass", "Foam", "Plastic", "Metal", "Polycarbonate", "PU Leather", "Steel", "Silicone", "TPR", "Stainless Steel"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$400-$499.99"]
+        }
+      },
+      {
+        handles: ["unique-butt-plugs"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Green", "Grey", "Multi", "Pink", "Purple", "Red", "White"],
+          "Material": ["ABS", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Chrome Plated Alloy", "Faux Fur", "Feather", "Fiber", "Fur", "Glass", "Latex", "Leather", "Metal", "nickel-free Metal", "Plastic", "Polycarbonate", "Polyester", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99", "$300-$399.99"]
+        }
+      }, 
+      {
+        handles: ["vibrating-butt-plugs"],
+        filters: {
+          "Color": ["Black", "Blue", "Grey", "Pink", "Purple", "White", "Flesh"],
+          "Material": ["ABS", "Faux Fur", "Metal", "PVC", "Rubber", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["p-spot-toys"],
+        filters: {
+          "Color": ["Black", "Clear", "Flesh Toned", "Grey", "Pink", "Purple", "Red", "White", "Green"],
+          "Material": ["ABS", "Glass", "PVC", "Polycarbonate", "Metal", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["oversized-anal-toys"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Flesh", "Grey", "Flesh Toned", "Purple", "Red"],
+          "Material": ["ABS", "Borosilicate Glass", "Foam", "Latex", "PVC", "Rubber", "Silicone", "Stainless Steel", "Steel", "TPE", "Metal", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99", "$500-$749.99"]
+        }
+      }, 
+      {
+        handles: ["bedroom-bondage-gear"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Grey", "Purple", "Red", "White"],
+          "Material": ["ABS", "Acrylic", "Cotton", "Faux Fur", "Faux Leather", "Fleece", "Hemp", "Leather", "Metal", "nickel-free Metal", "Plastic", "Neoprene", "Nylon", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl"],
+          "Width / Diameter": ["1.6 - 1.99", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99"]
+        }
+      }, 
+      {
+        handles: ["collars"],
+        filters: {
+          "Color": ["Black", "Brown", "Grey", "Purple", "Red", "Silver"],
+          "Material": ["ABS", "Aluminum Alloy", "Brass", "Chrome Plated Steel", "Faux Fur", "Faux Leather", "Leather", "Metal", "Plastic", "Neoprene", "Nylon", "PU Leather", "Stainless Steel", "Vinyl"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$100-$149.99", "$400-$499.99"]
+        }
+      }, 
+      {
+        handles: ["blindfolds"],
+        filters: {
+          "Color": ["Black", "Purple", "Red"],
+          "Material": ["ABS", "Elastic", "Fabric", "Leather", "Metal", "PU Leather", "Spandex", "Vinyl"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$40-$49.99", "$60-$79.99", "$200-$299.99"]      
+        }
+      },    
+      {      
+        handles: ["armbinders"],      
+        filters: {     
+          "Color": ["Black", "Grey"],
+          "Material": ["Leather", "Nylon", "Rubber", "PU Leather", "Stainless Steel"],        
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99"]      
+        }    
+      },    
+      { 
+        handles: ["handcuffs-irons"],      
+        filters: {     
+          "Color": ["Black", "Grey", "Silver"],        
+          "Material": ["Aluminum", "Aluminum Alloy", "Chrome Plated Alloy", "Iron", "Metal", "Plastic", "Stainless Steel", "Steel", "PU Leather"],        
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],        
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "7 - 8.9"],        
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$1000+"]      
+        }    
+      },    
+      {      
+        handles: ["straitjackets"],      
+        filters: {        
+          "Color": ["Black"],        
+          "Material": ["Canvas", "Leather", "Metal", "PU Leather"],
+          "Unit Price": ["$80-$99.99", "$150-$199.99", "$300-$399.99"]      
+        }    
+      },    
+      {
+        handles: ["hoods-and-masks"], 
+        filters: {
+          "Color": ["Black", "Grey", "Tan", "White"],
+          "Material": ["ABS", "Latex", "Leather", "Metal", "nickel-free Metal", "Neoprene", "Nylon", "PU Leather", "Silicone", "Spandex"],
+          "Width / Diameter": ["5+"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$150-$199.99", "$200-$299.99", "$300-$399.99"]      
+        }    
+      },    
+      {  
+        handles: ["mouth-gags-and-muzzles"],      
+        filters: {        
+          "Color": ["Black", "Blue", "Grey", "Pink", "Red", "White", "Tan"],        
+          "Material": ["ABS", "Fabric", "Faux Leather", "Felt", "Latex", "Leather", "Metal", "Neoprene", "nickel-free Metal", "Nylon", "Plastic", "PU", "PU Leather", "PVC", "Rubber", "Silicone", "Stainless Steel", "Vinyl", "Velcro", "TPR"],        
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "5 +"],        
+          "Item Insertable Length Range": ["0 - 4.9", "6 - 6.9"],        
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99"]      
+        }    
+      },    
+      {      
+        handles: ["chastity-devices"],      
+        filters: {   
+          "Color": ["Black", "Clear", "Flesh", "Pink", "Silver", "White", "Yellow"],        
+          "Material": ["ABS", "Brass", "Latex", "Leather", "Metal", "Polycarbonate", "PS", "PU Leather", "Silicone", "Stainless Steel", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],        
+          "Item Insertable Length Range": ["0 - 4.9"],        
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99"]      
+        }    
+      },    
+      {      
+        handles: ["wrist-and-ankle-restraints"],      
+        filters: {        
+          "Color": ["Black", "Blue", "Brown", "Clear", "Grey", "Pink", "Purple", "Red", "Silver", "Tan"],
+          "Material": ["ABS", "Acrylic", "Aluminum Alloy", "Brass", "Chrome Plated Alloy", "Faux Fur", "Cotton", "Faux Leather", "Fleece", "Hemp", "Iron", "Leather", "Metal", "Neoprene", "Plastic", "Nylon", "PU Leather", "PVC", "Rubber", "Stainless Steel", "Steel", "Velcro", "Vinyl", "Wood"],        
+          "Width / Diameter": ["0 - 0.99"],        
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$500-$749.99", "$1000+"]      
+        }    
+      },    
+      {      
+        handles: ["strict-leather"],      
+        filters: {        
+          "Color": ["Black", "Blue", "Brown", "Flesh", "Grey", "Pink", "Purple", "Red", "White", "Tan"],
+          "Material": ["Brass", "Canvas", "Leather", "Metal", "Neoprene", "PU", "PU Leather", "PVC", "Rubber", "Silicone", "Stainless Steel", "Spandex", "Wood"], 
+          "Width / Diameter": ["1 - 1.59"], 
+          "Item Insertable Length Range": ["0 - 4.9", "6 - 6.9"], 
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99"]
+        }
+      }, 
+      {
+        handles: ["body-harnesses"],
+        filters: {
+          "Color": ["Black"],
+          "Material": ["Faux Leather", "Leather", "PU Leather"],
+          "Unit Price": ["$20-$29.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["mens-pants"],
+        filters: {
+          "Color": ["Black"],
+          "Material": ["Leather"],
+          "Unit Price": ["$150-$199.99"]
+        }
+      }, 
+      {
+        handles: ["jock-straps"],
+        filters: {
+          "Color": ["Black", "Clear"],
+          "Material": ["Elastic", "Leather", "TPE", "TPR"],
+          "Width / Diameter": ["2 - 2.49"],
+          "Item Insertable Length Range": ["5 - 5.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["mens-uniforms"],
+        filters: {
+          "Color": ["Black"],
+          "Material": ["Leather", "Spandex"],
+          "Unit Price": ["$40-$49.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["accessories"],
+        filters: {
+          "Color": ["Black", "Clear", "Grey"],
+          "Material": ["Latex", "Leather", "Silicone", "Stainless Steel", "TPE"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["masks"],
+        filters: {
+          "Color": ["Black", "Grey", "White"],
+          "Material": ["ABS", "Latex", "Metal", "nickel-free Metal", "Neoprene", "PU Leather", "Silicone", "Vinyl"],
+          "Width / Diameter": ["5+"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$10-$19.99", "$30-$39.99", "$40-$49.99", "$50-$59.99"]
+        }
+      }, 
+      {
+        handles: ["anal-intruder-cock-rings"],
+        filters: {
+          "Color": ["Black", "Blue", "Gold", "Grey", "Purple"],
+          "Material": ["ABS", "Latex", "Metal", "Plastic", "PVC", "Rubber", "Silicone", "Stainless Steel", "Steel", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["leather-and-snap-cock-rings"],
+        filters: {
+          "Color": ["Black", "Blue", "Grey"],
+          "Material": ["ABS", "Faux Leather", "Leather", "Metal", "Neoprene", "Rubber", "PU Leather"],
+          "Width / Diameter": ["0 - 0.99"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$60-$79.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["metal-and-rigid-cock-rings"],
+        filters: {
+          "Color": ["Black", "Grey", "Silver", "Yellow"],
+          "Material": ["ABS", "Aluminum", "Chrome Plated Brass", "Chrome Plated Steel", "Leather", "Metal", "Plated Brass", "PU Leather", "Silicone", "Stainless Steel", "Steel", "Velcro"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["stretchy-cock-rings"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Grey", "Multi", "Purple", "Red"],
+          "Material": ["ABS", "Latex", "Leather", "Metal", "Neoprene", "Plastic", "Polyester", "Rubber", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["vibrating-dildos"],
+        filters: {
+          "Color": ["Black", "Blue", "Flesh", "Grey", "Pink", "Purple"],
+          "Material": ["ABS", "Faux Leather", "Jelly Rubber", "Latex", "Leather", "Metal", "PVC", "Silicone", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$750-$999.99"]
+        }
+      }, 
+      {
+        handles: ["glass-and-steel-dildos"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Green", "Grey", "Pink", "Red", "White"],
+          "Material": ["ABS", "Aluminum", "Borosilicate Glass", "Faux Fur", "Feather", "Glass", "Leather", "Metal", "Plastic", "Polyester", "Silicone", "Stainless Steel"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99"]
+        }
+      }, 
+      {
+        handles: ["realistic-cocks"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Flesh", "Flesh Toned", "Grey", "Purple", "Tan", "White"],
+          "Material": ["ABS", "Aluminum", "Borosilicate Glass", "Leather", "Metal", "PVC", "Silicone", "Stainless Steel", "Rubber", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99"]
+        }
+      }, 
+      {
+        handles: ["traditional-dildos"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Grey", "Pink", "Purple", "Red", "White", "Tan"],
+          "Material": ["ABS", "Glass", "Latex", "Leather", "Metal", "PVC", "Silicone", "Stainless Steel", "Rubber", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "4 - 4.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["inflatable-dildos"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Grey", "Pink", "Purple", "Red", "White", "Tan"],
+          "Material": ["ABS", "Glass", "Latex", "Leather", "Metal", "Rubber", "PVC", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "4 - 4.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99"]
+        }
+      }, 
+      {
+        handles: ["huge-dildos"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Flesh", "Flesh Toned", "Grey", "Pink", "Purple"],
+          "Material": ["ABS", "Aluminum", "Borosilicate Glass", "Foam", "Latex", "Leather", "Metal", "Rubber", "PVC", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99"],
+          "Item Insertable Length Range": ["6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99", "$400-$499.99", "$500-$749.99"]
+        }
+      }, 
+      {
+        handles: ["sex-flesh"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Flesh", "Pink", "White"],
+          "Material": ["ABS", "Metal", "PVC", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$100-$149.99", "$200-$299.99", "$300-$399.99"]
+        }
+      }, 
+      {
+        handles: ["prisms-erotic-glass"],
+        filters: {
+          "Color": ["Black", "Clear", "Green", "Blue", "Pink"],
+          "Material": ["Borosilicate Glass", "Glass", "Leather"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["electrical-units"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Multi", "Grey", "Purple", "White"],
+          "Material": ["ABS", "Faux Leather", "Nylon", "Metal", "Polycarbonate", "Rubber", "Silicone", "Stainless Steel", "Velcro"],
+          "Width / Diameter": ["1 - 1.59", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99"]
+        }
+      }, 
+      {
+        handles: ["electrosex-accessories"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Grey", "White"],
+          "Material": ["ABS", "Aluminum", "Fabric", "Faux Leather", "Latex", "Leather", "Metal", "Plastic", "Polycarbonate", "Polyester", "PS", "Rubber", "Silicone", "Stainless Steel", "Wood", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["zeus-electrosex"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Grey", "Multi", "Purple", "White"],
+          "Material": ["ABS", "Aluminum", "Fabric", "Faux Leather", "Glass", "Latex", "Leather", "Metal", "Plastic", "Polyester", "PS", "Rubber", "Silicone", "Stainless Steel", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99"]
+        }
+      }, 
+      {
+        handles: ["adapters-and-leads"],
+        filters: {
+          "Color": ["Black", "Grey", "Red"],
+          "Material": ["Metal", "Silicone"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99"]
+        }
+      }, 
+      {
+        handles: ["enema-devices"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Grey", "Red", "White"],
+          "Material": ["ABS", "Aluminum", "Copper", "Latex", "Metal", "Plastic", "Polyurethane", "PP", "PVC", "Silicone", "Stainless Steel", "Rubber", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["fucking-machines"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Flesh", "Flesh Toned", "Grey", "Pink", "Red"],
+          "Material": ["ABS", "Aluminum", "Aluminum Alloy", "Acrylic", "Faux Leather", "Latex", "natural Rubber", "Metal", "Plastic", "PU Leather", "PVC", "Silicone", "Rubber", "Steel", "TPE", "Wood", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "3 - 3.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      }, 
+      {
+        handles: ["leather-sex-pigs"],
+        filters: {
+          "Color": ["Black", "White", "Clear"],
+          "Material": ["Leather", "PVC", "TPE"],
+          "Width / Diameter": ["1 - 1.59", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["6 - 6.9", "11+"],
+          "Unit Price": ["$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$300-$399.99"]
+        }
+      }, 
+      {
+        handles: ["condoms"],
+        filters: {
+          "Color": ["Black", "Clear"],
+          "Material": ["TPE"],
+          "Width / Diameter": ["2.5 - 2.99"],
+          "Item Insertable Length Range": ["6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99"]
+        }
+      }, 
+      {
+        handles: ["water-based-lube"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Red", "White"],
+          "Material": ["ABS", "PVC", "Rubber"],
+          "Width / Diameter": ["2 - 2.49"],
+          "Item Insertable Length Range": ["6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$150-$199.99"]
+        }
+      }, 
+      {
+        handles: ["silicone-based-lube"],
+        filters: {
+          "Color": ["Clear"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$50-$59.99"]
+        }
+      }, 
+      {
+        handles: ["enhancement-lubes"],
+        filters: {
+          "Color": ["Blue", "Clear", "Flesh", "Green", "White"],
+          "Material": ["PVC"],
+          "Width / Diameter": ["2 - 2.49"],
+          "Item Insertable Length Range": ["6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99"]
+        }
+      }, 
+      {
+        handles: ["lube-delivery-devices"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Grey", "Pink", "Red"],
+          "Material": ["ABS", "Rubber", "Silicone", "Stainless Steel"],
+          "Width / Diameter": ["0 - 0.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99"]
+        }
+      }, 
+      {
+        handles: ["oil-based-lube"],
+        filters: {
+          "Color": ["Clear", "White"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99"]
+        }
+      }, 
+      {
+        handles: ["desensitizing-lube"],
+        filters: {
+          "Color": ["Black", "Clear", "Green", "White"],
+          "Material": ["Silicone"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99"]
+        }
+      }, 
+      {
+        handles: ["masturbation-toys"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Grey", "Pink", "Red", "White"],
+          "Material": ["ABS", "Acrylic", "Latex", "Metal", "natural Rubber", "PC", "PE", "PP", "PS", "Rubber", "Silicone", "Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$200-$299.99", "$300-$399.99", "$500-$749.99", "$1000+"]
+        }
+      }, 
+      {
+        handles: ["batteries"],
+        filters: {
+          "Color": ["Grey", "Multi"],
+          "Unit Price": ["$0-$9.99"]
+        }
+      }, 
+      {
+        handles: ["locks-hardware"],
+        filters: {
+          "Color": ["Black", "Grey", "Yellow"],
+          "Material": ["Brass", "Chrome", "Metal", "Plastic", "Stainless Steel"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99"]
+        }
+      }, 
+      {
+        handles: ["other"],
+        filters: {
+          "Color": ["Black", "Clear", "Grey", "White"],
+          "Material": ["Aluminum", "ABS"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$60-$79.99"]
+        }
+      }, 
+      {
+        handles: ["penis-extenders"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Flesh", "White"],
+          "Material": ["ABS", "Elastic", "Foam", "Latex", "Metal", "Plastic", "PVC", "Silicone", "Spandex", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$60-$79.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["penis-pumps"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Flesh", "White"],
+          "Material": ["ABS", "Elastic", "Foam", "Latex", "Metal", "Plastic", "PVC", "Silicone", "Spandex", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99"]
+        }
+      }, 
+      {
+        handles: ["prostate-stimulators"],
+        filters: {
+          "Color": ["Black", "Clear", "Green", "Grey", "Pink", "Purple", "Red", "White"],
+          "Material": ["ABS", "Glass", "Metal", "Polycarbonate", "PVC", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "4 - 4.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      }, 
+      {
+        handles: ["nipple-toys"],
+        filters: {
+          "Color": ["Black", "Clear", "Flesh", "Grey", "Silver", "Yellow"],
+          "Material": ["ABS", "Aluminum", "Aluminum Alloy", "Acrylic", "Brass", "Faux Leather", "Glass", "Magnet", "Metal", "Metal Coated Magnet", "Plastic", "Neoprene", "PU Leather", "PVC", "Rubber", "Silicone", "Stainless Steel", "Steel", "TPE", "Vinyl", "TPR"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$150-$199.99"]
+        }
+      }, 
+      {
+        handles: ["medical-gear"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh Toned", "Grey", "White"],
+          "Material": ["ABS", "Acrylic", "Chrome Plated Brass", "Chrome Plated Steel", "Faux Leather", "Latex", "Metal", "Polyurethane", "PP", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Rubber", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "7 - 8.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      }, 
+      {
+        handles: ["ball-stretchers-and-weights"],
+        filters: {
+          "Color": ["Black", "Clear", "Grey", "Silver"],
+          "Material": ["ABS", "Acrylic", "Leather", "Metal", "Neoprene", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "Velcro", "Wood", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99"]
+        }
+      }, 
+      {
+        handles: ["floggers-whips"],
+        filters: {
+          "Color": ["Black", "Blue", "Flesh", "Grey", "Purple", "Red"],
+          "Material": ["Cowhide Leather", "Faux Fur", "Faux Leather", "Glass", "Leather", "Metal", "Nylon", "Plastic", "PU Leather", "PVC", "Silicone", "RBS-E Glass batten", "Rubber", "vinyl"],
+          "Width / Diameter": ["1 - 1.59"],
+          "Item Insertable Length Range": ["6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99"]
+        }
+      }, 
+      {
+        handles: ["canes-crops"],
+        filters: {
+          "Color": ["Black", "Grey", "Red"],
+          "Material": ["ABS", "Feather", "Leather", "Metal", "Plastic", "Silicone", "Steel"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$50-$59.99"]
+        }
+      }, 
+      {
+        handles: ["paddles-slappers"],
+        filters: {
+          "Color": ["Black", "Blue", "Grey", "Red", "Wood"],
+          "Material": ["Faux Leather", "Leather", "Metal", "PU Leather", "Rubber", "Silicone", "Vinyl", "Wood"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99"]
+        }
+      }, 
+      {
+        handles: ["kink-industries"],
+        filters: {
+          "Color": ["Black", "Brown", "Clear", "Green", "Grey", "Red", "White", "Yellow"],
+          "Material": ["ABS", "Acrylic", "Brass", "Bronze", "Chrome Plated Brass", "Hemp", "Leather", "Metal", "Magnet", "Plastic", "Neoprene", "Nylon", "Rubber", "Silicone", "Stainless Steel", "Steel", "Wood"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      }, 
+      {
+        handles: ["master-series"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Green", "Grey", "Flesh Toned", "Pink", "Red", "White", "Silver", "Yellow"],
+          "Material": ["ABS", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Brass", "Chrome Plated Alloy", "Chrome Plated Steel", "Cotton", "Elastic", "Fabric", "Faux Leather", "Felt", "Glass", "Latex", "Leather", "Magnet", "Metal", "Neoprene", "nickel-free Metal", "Nylon", "Plastic", "Polycarbonate", "PS", "PU", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl", "Wood"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$400-$499.99"]
+        }
+      }, 
+      {
+        handles: ["sex-slings-furniture"],
+        filters: {
+          "Color": ["Black", "Grey"],
+          "Material": ["ABS", "Aluminum", "Fabric", "Foam", "Leather", "Metal", "Neoprene", "Nylon", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Steel", "Rubber", "TPE", "Vinyl", "Wood"],
+          "Width / Diameter": ["1.6 - 1.99", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "7 - 8.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$50-$59.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$1000+"]
+        }
+      }, 
+      {
+        handles: ["strap-ons-harnesses"],
+        filters: {
+          "Color": ["Black", "Clear", "Flesh", "Grey", "Pink", "Purple"],
+          "Material": ["ABS", "Elastic", "Latex", "Leather", "Metal", "PU Leather", "PVC", "Silicone", "Stainless Steel", "Spandex", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"], 
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"], 
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$300-$399.99"] 
+        } 
+      }, 
+      { 
+        handles: ["toms-cock-and-ball-tools"], 
+        filters: { 
+          "Color": ["Black", "Blue", "Clear", "Grey", "Multi", "White"], 
+          "Material": ["ABS", "Aluminum", "Elastic", "Leather", "Metal", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"], 
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"], 
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$80-$99.99", "$100-$149.99"]
+          }
+      },
+      {
+        handles: ["toms-cocks-insertables"],
+        filters: {
+          "Color": ["Black", "Blue", "Flesh", "Grey"],
+          "Material": ["ABS", "Foam", "Metal", "PVC", "Silicone", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$100-$149.99", "$400-$499.99"]
+        }
+      },
+      {
+        handles: ["toms-restraints"],
+        filters: {
+          "Color": ["Black", "Grey", "Silver"],
+          "Material": ["Aluminum Alloy", "Brass", "Elastic", "Leather", "Metal", "Neoprene", "Plastic", "Rubber", "Stainless Steel", "Vinyl"],
+          "Width / Diameter": ["0 - 0.99"],
+          "Unit Price": ["$0-$9.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99"]
+        }
+      },
+      {
+        handles: ["toms-lubricants"],
+        filters: {
+          "Color": ["Blue", "Clear", "White"],
+          "Material": ["PVC"],
+          "Width / Diameter": ["1 - 1.59"],
+          "Item Insertable Length Range": ["0 - 4.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99"]
+        }
+      },
+      {
+        handles: ["urethral-play"],
+        filters: {
+          "Color": ["Black", "Flesh Toned", "Grey", "Blue", "Yellow", "Clear"],
+          "Material": ["ABS", "Bronze", "Chrome Plated Brass", "Metal", "Plastic", "Polyester", "Silicone", "Stainless Steel", "Steel", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      },
+      {
+        handles: ["bullet-vibrators"],
+        filters: {
+          "Color": ["Black", "Clear", "Grey", "Pink", "Purple", "Red"],
+          "Material": ["ABS", "Silicone", "TPE"],
+          "Width / Diameter": ["1 - 1.59", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$50-$59.99", "$60-$79.99", "$100-$149.99"]
+        }
+      },
+      {
+        handles: ["prostate-vibrators"],
+        filters: {
+          "Color": ["Black", "Flesh", "Pink", "Purple"],
+          "Material": ["ABS", "Metal", "Polycarbonate", "PVC", "Silicone", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      },
+      {
+        handles: ["premium-silicone-vibrators"],
+        filters: {
+          "Color": ["Black", "Blue", "Pink", "Purple"],
+          "Material": ["ABS", "Leather", "Metal", "Plastic", "Polycarbonate", "Silicone", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99"]
+        }
+      },
+      {
+        handles: ["remote-control-vibrating-toys"],
+        filters: {
+          "Color": ["Black", "Grey", "Pink"],
+          "Material": ["ABS", "Faux Leather", "Leather", "Metal", "Nylon", "PVC", "Silicone", "Stainless Steel", "Velcro", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      },
+      {
+        handles: ["unique-and-unusual-vibrators"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Grey", "Red", "White"],
+          "Material": ["ABS", "Faux Fur", "PP", "PVC", "Silicone", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$200-$299.99"]
+        }
+      },
+      {
+        handles: ["vibrating-cock-rings"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Grey", "Purple", "Red"],
+          "Material": ["ABS", "Plastic", "PVC", "Silicone", "Stainless Steel", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$60-$79.99"]
+        }
+      },
+      {
+        handles: ["wand-massagers"],
+        filters: {
+          "Color": ["Black", "Blue", "Clear", "Flesh", "Grey", "Pink", "Purple", "White"],
+          "Material": ["ABS", "PVC", "Silicone", "TPE", "TPR"],
+          "Width / Diameter": ["1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99"]
+        }
+      },
+      {
+        handles: ["last-chance-deals"],
+        filters: {
+          "Color": ["Black", "Clear", "Flesh", "Grey", "Red", "Silver", "White"],
+          "Material": ["Brass", "Leather", "PE", "Plastic", "Silicone", "Stainless Steel", "TPE", "TPR"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$200-$299.99", "$1000+"]
+        }
+      },
+      {
+        handles: ["on-sale"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Flesh Toned", "Gold", "Green", "Grey", "Multi", "Orange", "Pink", "Purple", "Red", "Silver", "Tan", "White", "Wood", "Yellow"],
+          "Material": ["ABS", "Acrylic", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Brass", "Canvas", "Chrome Plated Brass", "Chrome Plated Alloy", "Chrome Plated Steel", "Copper", "Cotton", "Elastic", "Fabric", "Faux Fur", "Faux Leather", "Feather", "Felt", "Fiber", "Fleece", "Foam", "Fur", "Glass", "Latex", "Leather", "Magnet", "Metal", "Metal Coated Magnet", "natural Rubber", "Neoprene", "nickel-free Metal", "Nylon", "PE", "Plastic", "Plated Brass", "Polycarbonate", "Polyester", "Polyurethane", "PP", "PS", "PU", "PU Leather", "PVC", "Rubber", "Silicone", "Spandex", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl", "Wood"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      },
+      {
+        handles: ["new-items"],
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Flesh Toned", "Gold", "Green", "Grey", "Multi", "Orange", "Pink", "Purple", "Red", "Silver", "Tan", "White", "Wood", "Yellow"],
+          "Material": ["ABS", "Acrylic", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Brass", "Bronze", "Canvas", "Chrome", "Chrome Plated Brass", "Chrome Plated Alloy", "Chrome Plated Steel", "Copper", "Cotton", "Cowhide Leather", "Elastic", "Fabric", "Faux Fur", "Faux Leather", "Feather", "Felt", "Fiber", "Fleece", "Foam", "Fur", "Glass", "Hemp", "Iron", "Jelly Rubber", "Latex", "Leather", "Magnet", "Metal", "Metal Coated Magnet", "natural Rubber", "Neoprene", "nickel-free Metal", "Nylon", "PC", "PE", "Plastic", "Plated Brass", "Polycarbonate", "Polyester", "Polyurethane", "PP", "PS", "PU", "PU Leather", "PVC", "RBS-E Glass batten", "Rubber", "Silicone", "Spandex", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl", "Wood"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      },
+      {
+        handles: ["best-selling"], 
+        filters: {
+          "Color": ["Black", "Blue", "Brown", "Clear", "Flesh", "Flesh Toned", "Gold", "Green", "Grey", "Multi", "Orange", "Pink", "Purple", "Red", "Silver", "Tan", "White", "Wood", "Yellow"],
+          "Material": ["ABS", "Acrylic", "Aluminum", "Aluminum Alloy", "Borosilicate Glass", "Brass", "Bronze", "Canvas", "Chrome", "Chrome Plated Brass", "Chrome Plated Alloy", "Chrome Plated Steel", "Copper", "Cotton", "Cowhide Leather", "Elastic", "Fabric", "Faux Fur", "Faux Leather", "Feather", "Felt", "Fiber", "Fleece", "Foam", "Fur", "Glass", "Hemp", "Iron", "Jelly Rubber", "Latex", "Leather", "Magnet", "Metal", "Metal Coated Magnet", "natural Rubber", "Neoprene", "nickel-free Metal", "Nylon", "PC", "PE", "Plastic", "Plated Brass", "Polycarbonate", "Polyester", "Polyurethane", "PP", "PS", "PU", "PU Leather", "PVC", "RBS-E Glass batten", "Rubber", "Silicone", "Spandex", "Stainless Steel", "Steel", "TPE", "TPR", "Velcro", "Vinyl", "Wood"],
+          "Width / Diameter": ["0 - 0.99", "1 - 1.59", "1.6 - 1.99", "2 - 2.49", "2.5 - 2.99", "3 - 3.99", "4 - 4.99", "5+"],
+          "Item Insertable Length Range": ["0 - 4.9", "5 - 5.9", "6 - 6.9", "7 - 8.9", "9 - 10.9", "11+"],
+          "Unit Price": ["$0-$9.99", "$10-$19.99", "$20-$29.99", "$30-$39.99", "$40-$49.99", "$50-$59.99", "$60-$79.99", "$80-$99.99", "$100-$149.99", "$150-$199.99", "$200-$299.99", "$300-$399.99", "$400-$499.99", "$500-$749.99", "$750-$999.99", "$1000+"]
+        }
+      }
+]
+</script>

@@ -1,0 +1,226 @@
+{{ 'section-image-grid.css' | asset_url | stylesheet_tag }}
+
+<div
+    class="image-grid image-grid-mobile-{{ section.settings.columns_mobile }} image-grid-desktop-{{ section.settings.columns_desktop }} {% if section.settings.width == 'box' %}page-width{% endif %} section-spacing"
+    style="
+        --desktop-spacing: {{ section.settings.desktop_space }}px;
+        --mobile-spacing: {{ section.settings.mobile_space }}px;
+    "
+>
+  {% assign bannerName = 'Main_Banner' %}
+  {% if section.index > 1 %}
+    {% assign bannerName = 'Secondary_Banner' %}
+  {% endif %}
+
+  {% if section.index > 2 %}
+    {% assign bannerName = "Lower_Banner" %}
+  {% endif %}
+
+  {% assign indexFlag = false %}
+  {% if template contains 'index' %}
+    {% assign indexFlag = true %}
+  {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% assign createName = block.settings.desktop_image.alt %}
+        {% if createName == blank %}
+          {% assign createName = block.settings.mobile_image.alt %}
+        {% endif %}
+
+        {% if createName == blank %}
+          {% assign createName = block.settings.desktop_image.src %}
+        {% endif %}
+
+
+        <a
+          class="image-grid__item"
+          href="{{ block.settings.url | default: '#' }}"
+          data-promotion 
+      data-creative-name="{{ createName }}{% unless indexFlag %}_SFW{% endunless %}" 
+          data-creative-slot="{{ bannerName }}{% unless indexFlag %}_SFW{% endunless %}" 
+          data-location-id="{{ bannerName }}_{{ forloop.index }}{% unless indexFlag %}_SFW{% endunless %}"
+          data-promotion-id="{{ page_title }}_{{ bannerName }}_{{ forloop.index }}{% unless indexFlag %}_SFW{% endunless %}" 
+          data-promotion-name="{{ bannerName }}_{{ forloop.index }}-{{ page_title }}{% unless indexFlag %}_SFW{% endunless %}"
+        >
+          {% if block.settings.desktop_image != blank %}
+            {% assign mobile_ratio = '500/500' %}
+            {% if block.settings.mobile_image != blank %}
+                {% assign mobile_ratio = block.settings.mobile_image.width | append: '/' | append: block.settings.mobile_image.height %}
+            {% endif %}
+
+            {% assign fetchpriority = 'auto' %}
+            {% if section.index > 1 %}
+              {%- assign loading = 'lazy' -%}
+            {% else %}
+              {%- assign loading = 'eager' -%}
+              {% assign fetchpriority = 'high' %}
+            {% endif %}
+            {% liquid
+              assign width = block.settings.desktop_image.width
+              assign height = block.settings.desktop_image.height
+              if block.settings.mobile_image != blank
+                assign width = block.settings.mobile_image.width
+                assign height = block.settings.mobile_image.height
+              endif
+            %}
+
+            {%- render 'responsive-image',
+              object_image: block.settings.desktop_image,
+              mobile_image: block.settings.mobile_image,
+              class: 'o-ar__grid',
+              img_class: "o-ar__item",
+              aspect_ratio: true,
+              mobile_ratio: mobile_ratio,
+              loading: block.settings.loading,
+              fetchpriority: block.settings.fetchpriority,       
+              width: block.settings.desktop_image.width,
+              height: block.settings.desktop_image.height
+            -%}
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h4 class="image-grid__title">
+                {{ block.settings.title }}
+            </h4>
+          {% endif %}
+        </a>
+      {% endfor %}
+    {% endif %}
+</div>
+
+{% schema %}
+    {
+      "name": "Image Grid",
+      "tag": "section",
+      "settings": [
+        {
+            "type": "range",
+            "id": "desktop_space",
+            "label": "Desktop Space",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mobile_space",
+            "label": "Mobile Space",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "columns_desktop",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 3,
+            "label": "Columns Desktop"
+        },
+        {
+            "type": "range",
+            "id": "columns_mobile",
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "default": 1,
+            "label": "Columns Mobile"
+        },
+        {
+            "type": "select",
+            "id": "width",
+            "label": "Width",
+            "options": [
+                {
+                    "label": "Full Width",
+                    "value": "full"
+                },
+                {
+                    "label": "Box Container",
+                    "value": "box"
+                }
+            ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "Image",
+          "name": "Image Block",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "desktop_image",
+              "label": "Desktop Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "mobile_image",
+              "label": "Mobile Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+              "type": "url",
+              "id": "url",
+              "label": "Url"
+            },
+            {
+              "type": "select",
+              "id": "loading",
+              "label": "Image Loading",
+              "default": "lazy",
+              "options": [
+                {
+                  "label": "Default (Browser decides)",
+                  "value": "default"
+                },                
+                {
+                  "label": "Lazy",
+                  "value": "lazy"
+                },
+                {
+                  "label": "Eager",
+                  "value": "eager"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "fetchpriority",
+              "label": "Fetch Priority",
+              "default": "auto",
+              "options": [
+                {
+                  "label": "Auto",
+                  "value": "auto"
+                },
+                {
+                  "label": "High",
+                  "value": "high"
+                },
+                {
+                  "label": "Low",
+                  "value": "low"
+                }
+              ]
+            }            
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Image Grid",
+          "category": "Content"
+        }
+      ]
+    }
+  {% endschema %}

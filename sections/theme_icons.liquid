@@ -1,0 +1,97 @@
+{% include "settings.shopify" %}
+
+<section class="no-margin" data-section-id="{{ section.id }}" data-section-type="HomepageIcons" style="background-color: {{ section.settings.background-color }}">
+  <div class="page-width">
+    <article class="homepage-icons">
+      <div class="homepage-icons__icons">
+        {%- for block in section.blocks -%}
+          <div class="homepage-icons__icon">
+            {% if block.settings.url %}
+              <a href="{{ block.settings.url }}" >
+            {% endif %}
+              <img class="lazy" loading="lazy" src="{{ block.settings.image | img_url: '180x180' }}" alt="{{ section.settings.banner-alt }}" width="90" height="90">
+              {% comment %} <img src="{{ block.settings.image }}" alt="" /> {% endcomment %}
+              <label style="color: {{ section.settings.text-color }}">{{ block.settings.title }}</label>
+            {% if block.settings.url %}
+              </a>
+            {% endif %}
+          </div>
+        {%- endfor -%}
+      </div>
+      
+      {% if enable_links %}
+        <div class="homepage-icons__contents">
+          {%- for x in (1..3) -%}
+            {%- assign link_title = "link-title-" | append: x -%}
+            {%- assign link_image = "link-image-" | append: x -%}
+            {%- assign link_url = "link-url-" | append: x -%}
+            {%- assign link_text = "link-text-" | append: x -%}
+            <a class="nohover" href="{{ section.settings[link_url] }}">
+              <div class="homepage-icons__content">
+                {%- if section.settings[link_image] != blank -%}
+                  <picture>
+                    <source media="(min-width: {{ breakpoint_desktop }})" data-srcset="{{ section.settings[link_image] | img_url: '180x180' }}" width="90" height="90" />
+                    <source media="(min-width: {{ breakpoint_tablet }})" data-srcset="{{ section.settings[link_image] | img_url: '180x180' }}" width="90" height="90" />
+                    <source media="(min-width: {{ breakpoint_mobile }})" data-srcset="{{ section.settings[link_image] | img_url: '180x180' }}" width="90" height="90" />
+                    <img class="homepage-icons__content--image lazy" data-src="{{ section.settings[link_image] | img_url: '180x180' }}" alt="" width="90" height="90">
+                  </picture>
+                {%- endif -%}
+                <label class="homepage-icons__content--title">{{ section.settings[link_title] }}</label>
+                <p class="homepage-icons__content--description">{{ section.settings[link_text] }}</p>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div> 
+      {% endif %}
+    </article>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Icons & Links",
+    "max_blocks": 6,
+    "settings": [
+      { "type": "color",    "id": "background-color", "label": "Section Background Colour" },
+      { "type": "color",    "id": "text-color",       "label": "Text Colour" },
+      { "type": "checkbox", "id": "enable_links",     "label": "Enable Links",    "default": false },
+      { "type": "header",   "content": "Link 1" },
+      { "type": "text",     "id": "link-title-1",     "label": "Title" },
+      { "type": "image_picker",     "id": "link-image-1",     "label": "Icon" },
+      { "type": "url",      "id": "link-url-1",       "label": "Url" },
+      { "type": "textarea", "id": "link-text-1",      "label": "Content" },
+
+      { "type": "header",   "content": "Link 2" },
+      { "type": "text",     "id": "link-title-2",     "label": "Title" },
+      { "type": "image_picker",     "id": "link-image-2",     "label": "Icon" },
+      { "type": "url",      "id": "link-url-2",       "label": "Url" },
+      { "type": "textarea", "id": "link-text-2",      "label": "Content" },
+
+      { "type": "header",   "content": "Link 3" },
+      { "type": "text",     "id": "link-title-3",     "label": "Title" },
+      { "type": "image_picker",     "id": "link-image-3",     "label": "Icon" },
+      { "type": "url",      "id": "link-url-3",       "label": "Url" },
+      { "type": "textarea", "id": "link-text-3",      "label": "Content" }
+    ],
+    "blocks": [
+      {
+        "name": "Icon Block",
+        "type": "Icon",
+        "settings": [
+          { "type": "header",   "content": "Icon Settings" },
+          { "type": "image_picker", "id": "image", "label": "Image" },
+          { "type": "text", "id": "title", "label": "Title" },
+          { "type": "url", "id": "url", "label": "Link" }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icons & Links",
+        "category": "Image",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,139 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "ccb528eb-6820-4c7a-b638-f81e7c8720bf": {
+          "type": "rating",
+          "settings": {}
+        },
+        "9e15963c-2eb8-4c9b-8187-24b48d642671": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "241d9529-6abf-4e3d-9a2c-57e7d50bb6f1": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "09c2fdbb-3e3b-4962-9021-5385625426c1": {
+          "type": "bundle_products",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "ccb528eb-6820-4c7a-b638-f81e7c8720bf",
+        "9e15963c-2eb8-4c9b-8187-24b48d642671",
+        "price",
+        "241d9529-6abf-4e3d-9a2c-57e7d50bb6f1",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "09c2fdbb-3e3b-4962-9021-5385625426c1",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "RELATED ITEMS",
+        "heading_size": "h2",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "enable_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "0e9911e3-8198-4349-b006-2907e5efb028": {
+      "type": "yopto-review",
+      "settings": {}
+    },
+    "custom_liquid_d6ixrC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\nvar classname = document.getElementsByClassName(\"button button--primary\");\nvar addToCart = function() {\n_learnq.push(['track', 'Added to Cart', item]);\n}; for (var i = 0; i < classname.length; i++) {\nclassname[i].addEventListener('click', addToCart, false);\n}\n<\/script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_JntDBD": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"footbar-fixed footbar-fixed-product\">\n    {% render 'sticky-add-to-cart' %}\n<\/div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "0e9911e3-8198-4349-b006-2907e5efb028",
+    "custom_liquid_d6ixrC",
+    "custom_liquid_JntDBD"
+  ]
+}

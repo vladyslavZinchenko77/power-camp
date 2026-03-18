@@ -1,0 +1,54 @@
+[data-section-type="Marquee"] {
+    text-align: center;
+    text-transform: capitalize;
+    display: block;
+    background: #05aff2;
+    padding: 0px;
+    position: relative;
+    top: 0px;
+    z-index: 111;
+    height: 29px;
+}
+.marquee__item.min_shipping_msg {
+    line-height: 29px;
+}
+@media (min-width: 1025px) {
+    [data-section-type="Marquee"] {
+        height: 33px;
+        padding: 0px;
+    }
+
+    .marquee__item.min_shipping_msg {
+        line-height: 33px;
+    }
+}
+[data-section-type="Marquee"] .marquee__item {
+    width: 100%;
+    display: none;
+    white-space: nowrap;
+    font-size: 0.7em;
+    font-family: "open_sanssemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 1025px) {
+    [data-section-type="Marquee"] .marquee__item {
+        font-size: 1em;
+    }
+}
+[data-section-type="Marquee"] * {
+      color: white;
+}
+@media (min-width: 1025px) {
+    [data-section-type="Marquee"] {
+        font-size: 12px;
+        top: 0;
+    }
+}
+[data-section-type="Marquee"] .owl-nav {
+    display: none;
+}
+
+.min_shipping_msg .currency-wrapper {
+    position: absolute;
+    top: -14px;
+    right: 0;
+}

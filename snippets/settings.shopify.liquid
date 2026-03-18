@@ -1,0 +1,4 @@
+{%- assign breakpoint_mobile = "1px" -%}
+{%- assign breakpoint_tablet = settings.mobile-breakpoint | remove: "px" | plus: 1 | append: "px" -%}
+{%- assign breakpoint_desktop = settings.tablet-breakpoint | remove: "px" | plus: 1 | append: "px" -%}
+{%- assign breakpoint_widescreen = settings.widescreen | remove: "px" | plus: 1 | append: "px" -%}

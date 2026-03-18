@@ -1,0 +1,103 @@
+<script>
+  /*window.onload = (event) => {
+    var api = new Yotpo.API(yotpo);
+    api.refreshWidgets();
+  };*/
+</script>
+
+<footer id="footer" class="footer" role="contentinfo">
+  <section 
+    class="footer__container nospacing no-margin" 
+    data-section-id="{{ section.id }}" 
+    data-section-type="Footer"
+    style="background-color: {{ section.settings.bg_color }};"
+  >
+    <article class="footer__navigation page-width" style="color: {{ section.settings.text_color }};">
+    <div class="footer__contact--logo showDesktop">
+      <div class="badge_static"><a href="/pages/reviews"><span class="count">1,128</span><span class="pb">Powered by YOTPO</span><img class='lazy' src="{{ 'badge_static.png' | asset_url }}" width="152" height="138" alt="review badge" loading="auto" /></a></div>
+      {% comment %}
+      <a href="/">
+        <img src="{{ section.settings.footer_logo | img_url: '720x440' }}" />
+      </a>
+      {% endcomment %}
+    </div>
+    {%- for block in section.blocks -%}
+      <div class="footer__navigation--menu">
+        <label class="footer__navigation--menu-title"><span>{{ block.settings.title }}</span></label>
+            <ul class="footer__navigation--menu-list">
+              {%- for link in linklists[block.settings.footer_menu].links -%}
+                <li class="footer__navigation--menu-list-item">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {%- endfor -%}
+              {%- if block.settings.title == 'Help' -%}
+              <li class="footer__navigation--menu-list-item">
+                <span onclick="chatButton.onClick();" style="display:none;cursor: pointer;">Live Chat</span>
+                <script type="text/javascript">
+                  (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+'https://xrllc.ladesk.com/scripts/track.js',
+function(e){ LiveAgent.createButton('puoz3xav', e); });
+                </script>
+              </li>
+              {%- endif -%}
+            </ul>
+        </div>
+      {%- endfor -%}
+    </article>
+
+    <div class="footer__contact--logo showTablet">
+      <div class="badge_static"><a href="/pages/reviews"><span class="count">1,128</span><span class="pb">Powered by YOTPO</span><img class='lazy' src="{{ 'badge_static.png' | asset_url }}" width="152" height="138" alt="review badge" loading="auto" /></a></div>
+      {% comment %}
+      <a href="/">
+        <img class='lazy' src="{{ section.settings.footer_logo | img_url: '720x440' }}" />
+      </a>
+      {% endcomment %}
+    </div>
+    
+    <article class="footer__contact">
+      <div class="footer__contact--cta"><a href="{{ section.settings.contact_url }}">{{ section.settings.contact_cta }}</a></div>
+    </article>
+  </section>
+</footer>
+
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    { "type": "header", "content": "Copyright Settings" },
+    { "type" : "image_picker", "id": "footer_logo", "label": "Logo for Footer"},
+    { "type" : "text", "id": "contact_cta", "label": "Call to Action for Contatct"},
+    { "type" : "url", "id": "contact_url", "label": "Contact Page"}
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Footer Navigation",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "link_list", "id": "footer_menu", "label": "Footer Menu", "info": "Select a navigation menu to display in the footer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

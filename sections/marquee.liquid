@@ -1,0 +1,117 @@
+<script>
+    window.theme = window.theme || {};
+    theme.marquee = {
+      enableGeo: {{ section.settings.enable_geo }},
+      enableShippingMin: {{ section.settings.enable_shipping_min }},
+      internationalMsg: {{ section.settings.international_message | json }},
+      usMsg: {{ section.settings.us_message | json }}
+    }
+</script>
+
+<link rel="stylesheet" href="{{ 'section-marquee.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-marquee.css' | asset_url | stylesheet_tag }}</noscript>
+  
+<section class="nospacing nopadding" data-section-id="{{ section.id }}" data-section-type="Marquee">
+    <div class="marquee__parent" data-shippingMin="{{ section.settings.shipping_min }}">
+      <div class="marquee__container"
+        data-special="marquee">
+          <div class="marquee__item {% if section.settings.enable_shipping_min %}min_shipping_msg{% endif %}">
+            <span>{{ section.settings.general_message }}</span>
+            <div class="currency-wrapper"></div>
+          </div>
+      </div>
+    </div>
+</section>
+  
+<style>
+    {%- for block in section.blocks -%}
+    html[data-currency="{{ block.settings.title }}"] .marquee__item span { font-size: 0 }
+    html[data-currency="{{ block.settings.title }}"] .marquee__item span::after { font-size: 10px; content: '{{ block.settings.message | escape }}';     display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-left: -100px; }
+    {%- endfor -%}
+</style>
+  
+{% schema %}
+    {
+        "name": "Marquee",
+        "enabled_on": {
+            "groups": ["header"]
+        },
+        "settings": [
+            {
+                "type": "text",
+                "id": "general_message",
+                "label": "General Marquee Message"
+            },
+            {
+                "type": "header",
+                "content": "Geo Location Message Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_geo",
+                "label": "Enable GeoIP Location Messaging",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "international_message",
+                "label": "International Marquee Message"
+            },
+            {
+                "type": "text",
+                "id": "us_message",
+                "label": "US Marquee Message"
+            },
+            {
+                "type": "header",
+                "content": "US min Shipping Message Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_shipping_min",
+                "label": "Enable Minimum Shipping Message",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "minimum_shipping_message",
+                "label": "Minimum Shipping Message"
+            },
+            {
+                "type": "text",
+                "id": "shipping_min",
+                "label": "Minimum Free Shipping Amount",
+                "info": "Enter in cents, ex. if $199, enter 19900"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "message",
+                "name": "International Message",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Currency Code (3-letters)"
+                    },
+                    {
+                        "type": "text",
+                        "id": "message",
+                        "label": "Message"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Marquee",
+                "category": "Content"
+            }
+        ]
+    }
+{% endschema %}
+  

@@ -1,0 +1,103 @@
+<div class="newsletter-form-section">
+  {% if section.settings.title != blank %}
+    <h1 class="title">{{ section.settings.title }}</h1>
+  {% endif %}
+
+  {% if section.settings.content != blank %}
+    <div class="content">{{ section.settings.content }}</div>
+  {% endif %}
+
+  {% form 'customer', class: 'newsletter-form' %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div
+      class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+      {% if settings.animations_reveal_on_scroll %}
+        data-cascade
+        style="--animation-order: {{ forloop.index }};"
+      {% endif %}
+    >
+      <div class="fields">
+        <input
+          id="NewsletterForm--{{ section.id }}"
+          type="email"
+          name="contact[email]"
+          class="field__input"
+          value="{{ form.email }}"
+          aria-required="true"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          placeholder="{{ 'newsletter.label' | t }}"
+          required
+        >
+
+        <input
+          id="NewsletterForm--{{ section.id }}"
+          type="text"
+          name="contact[first_name]"
+          class="field__input"
+          value="{{ form.name }}"
+          aria-required="true"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="first_name"
+          placeholder="{{ 'newsletter.name' | t }}"
+          required
+        >
+
+        <button
+          type="submit"
+          class="newsletter-form__button field__button"
+          name="commit"
+          id="Subscribe"
+          aria-label="{{ 'newsletter.button_label' | t }}"
+        >
+          Subscribe
+        </button>
+      </div>
+
+      {%- if form.errors -%}
+        <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+          {%- render 'icon-error' -%}
+          {{- form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email -}}
+        </small>
+      {%- endif -%}
+    </div>
+
+    {%- if form.posted_successfully? -%}
+      <h3
+        class="newsletter-form__message newsletter-form__message--success form__message"
+        id="Newsletter-success--{{ section.id }}"
+        tabindex="-1"
+        autofocus
+      >
+        {% render 'icon-success' -%}
+        {{- 'newsletter.success' | t }}
+      </h3>
+    {%- endif -%}
+  {% endform %}
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Form"
+    }
+  ]
+}
+{% endschema %}

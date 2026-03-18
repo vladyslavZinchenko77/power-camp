@@ -1,0 +1,100 @@
+
+<script src="{{ 'collection-filter.js' | asset_url }}" defer="defer"></script>
+
+{% assign collection_handle = 'default' %}
+{% if collection_handle != 'all' %}
+  {% assign collection_handle = collection.handle %}
+{% endif %}
+
+<collection-filter 
+  data-template="{{ template }}"
+  data-collection-handle="{{ collection_handle }}"
+  data-search="{{ search.terms }}"
+>
+  {% render 'settings.collection-filter' %}
+
+  {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+  <div class="collection-filter--select">
+    <div class="sort-container">
+      <select id="product-sorting" js-filter-sort name="sort_by">
+        <option value="" disabled >Sort By:</option>
+        {%- for option in results.sort_options -%}
+          <option 
+            value="{{ option.value | escape }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name | escape}}
+          </option>
+        {%- endfor -%}
+      </select>
+    </div>
+
+    <div class="collection-filters">
+      {% assign active_count = 0 %}
+      <div class="collection-filters__dropdown" js-filter-dropdown>
+        Filters (<span js-active-total-count>{{ active_count }}</span>)
+      </div>
+
+      <div class="collection-filters__container" js-filter-content>
+        {% for block in section.blocks %}
+          <div class="collection-filters__item">
+            <div class="title" js-dropdown-filter-title data-title="{{ block.settings.title }}">
+              {{ block.settings.title }}
+
+              {% assign active_filter_count = 0 %}
+              <span js-active-filter data-count="{{ active_filter_count }}" data-title="{{ block.settings.title }}">
+                {% if active_filter_count > 0 %}
+                  ({{ active_filter_count }})
+                {% endif %}
+              </span>
+            </div>
+
+            <div class="filter-content" js-dropdown-filter-content data-title="{{ block.settings.title }}" data-filter-prefix="{{ block.settings.filter_string }}">
+
+            </div>
+
+            {%- comment -%}
+            {% assign tags = '' %}
+            {% for filter in results.filters %}
+              {% if filter.label == 'More filters' %}
+                {% for val in filter.values %}
+                  {% if val.value contains block.settings.filter_string %}
+                    {% unless tags contains val.value %}
+                      {% assign tags = tags | append: val.value | append: '&&&&' | append: val.active | append: ',' %}
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+
+            {% assign tags = tags | split: ',' %}
+            {% if tags.size > 0 %}
+              <div class="filter-content" js-dropdown-filter-content data-title="{{ block.settings.title }}">
+                {% for tag in tags %}
+                  {% if tag != blank %}
+                    {% assign title = tag | split: '&&&&' | first | split: block.settings.filter_string | last %}
+                    {% assign is_active = tag | split: '&&&&' | last %}
+                    
+                    {% assign is_checked = false %}
+                    {% if is_active == 'true' %}
+                      {% assign is_checked = true %}
+                    {% endif %}
+
+                    {% assign encode_tag = tag | split: '&&&&' | first | url_encode %}
+                    <div class="filter-content--item" js-filter-item data-param="filter.p.tag">
+                      <input class="hidden" type="checkbox" name="filter.p.tag" value="{{ encode_tag }}" {% if is_checked %}checked="true"{% endif %}/>
+                      <label>{{ title }}</label>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>  
+            {% endif %}
+            {%- endcomment -%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</collection-filter>

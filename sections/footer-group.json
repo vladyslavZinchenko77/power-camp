@@ -1,0 +1,137 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "19e71002-8b0e-453e-84f7-19aa57d9b21e": {
+      "type": "theme_icons",
+      "blocks": {
+        "60b232b2-7073-4ba5-bc35-5837092f3795": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/worldwide-180.png",
+            "title": "WORLDWIDE SHIPPING",
+            "url": ""
+          }
+        },
+        "492bd92d-8cd2-4236-83b5-9374dd87b226": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.png",
+            "title": "99% OF ORDERS SHIP WITHIN 1 BUSINESS DAY",
+            "url": ""
+          }
+        },
+        "71878c45-e09e-49c7-9ac3-9f21953f7d04": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.png",
+            "title": "DISCREET PACKAGING",
+            "url": ""
+          }
+        },
+        "b8eeb731-c576-439a-8880-87deb8538c9a": {
+          "type": "Icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4.png",
+            "title": "SECURE SHOPPING",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "60b232b2-7073-4ba5-bc35-5837092f3795",
+        "492bd92d-8cd2-4236-83b5-9374dd87b226",
+        "71878c45-e09e-49c7-9ac3-9f21953f7d04",
+        "b8eeb731-c576-439a-8880-87deb8538c9a"
+      ],
+      "settings": {
+        "background-color": "#1d245b",
+        "text-color": "#ffffff",
+        "enable_links": false,
+        "link-title-1": "",
+        "link-url-1": "",
+        "link-text-1": "",
+        "link-title-2": "",
+        "link-url-2": "",
+        "link-text-2": "",
+        "link-title-3": "",
+        "link-url-3": "",
+        "link-text-3": ""
+      }
+    },
+    "7941ee74-630d-45f6-8257-8a4d7b04335d": {
+      "type": "theme_footer",
+      "blocks": {
+        "479783e0-a08b-4f24-8b2f-b03800eaeab6": {
+          "type": "link",
+          "settings": {
+            "title": "Customer Service",
+            "footer_menu": "footer"
+          }
+        },
+        "659e3f2c-5205-483a-b4fe-0b2e1164bc2f": {
+          "type": "link",
+          "settings": {
+            "title": "About Us",
+            "footer_menu": "footer-menu-2"
+          }
+        },
+        "7ff1040f-ec96-446e-8462-e77d5f15cc53": {
+          "type": "link",
+          "settings": {
+            "title": "Help",
+            "footer_menu": "footer-3"
+          }
+        }
+      },
+      "block_order": [
+        "479783e0-a08b-4f24-8b2f-b03800eaeab6",
+        "659e3f2c-5205-483a-b4fe-0b2e1164bc2f",
+        "7ff1040f-ec96-446e-8462-e77d5f15cc53"
+      ],
+      "settings": {
+        "bg_color": "#1d245b",
+        "text_color": "#ffffff",
+        "footer_logo": "shopify:\/\/shop_images\/BoyzShop-Footer-Logo-White-Transparent.png",
+        "contact_cta": "",
+        "contact_url": ""
+      }
+    },
+    "cd663c80-0fe6-4ee3-b698-103e1eb3db0c": {
+      "type": "footer-rights",
+      "settings": {
+        "bg_color": "#1d245b",
+        "footer-text": "All rights reserved. All models appearing on the website were at least 18 years of age on the date of principal photography. <a href=\"\/pages\/terms-use\" class=\"cont-info\"> 18 U.S.C. 2257 Record-Keeping Requirements Compliance Statement<\/a>",
+        "show_payment_icons": true,
+        "paypal_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-paypal-2.png?14638",
+        "mastercard_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-mastercard-2.png?14638",
+        "visa_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-visa-2.png?14638",
+        "amex_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-amex-2.png?14638"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "19e71002-8b0e-453e-84f7-19aa57d9b21e",
+    "7941ee74-630d-45f6-8257-8a4d7b04335d",
+    "cd663c80-0fe6-4ee3-b698-103e1eb3db0c",
+    "footer"
+  ]
+}

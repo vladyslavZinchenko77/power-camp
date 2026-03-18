@@ -1,0 +1,153 @@
+<style>
+    [data-money] { opacity: 0 }
+    [data-money][data-show] { opacity: 1 }
+  </style>
+  <script>
+    var Shopify=Shopify||{};Shopify.money_format="${{amount}}",Shopify.formatMoney=function(a,o){"string"==typeof a&&(a=a.replace(".",""));var e="",t=/\{\{\s*(\w+)\s*\}\}/,r=o||this.money_format;function n(a,o){return void 0===a?o:a}function i(a,o,e,t){if(o=n(o,2),e=n(e,","),t=n(t,"."),isNaN(a)||null==a)return 0;var r,i=(a=(a/100).toFixed(o)).split(".");return i[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1"+e)+(i[1]?t+i[1]:"")}switch(r.match(t)[1]){case"amount":e=i(a,2);break;case"amount_no_decimals":e=i(a,0);break;case"amount_with_comma_separator":e=i(a,2,".",",");break;case"amount_no_decimals_with_comma_separator":e=i(a,0,".",",")}return r.replace(t,e)};
+    {% assign rates = shop.metafields.currency.rates.value %}
+    window.EXCHANGE = {
+      
+      currencies: {
+        AUD: {
+          rate: {{ rates.AUD }},
+          {%- raw -%}format: 'A${{ amount }}'{%- endraw -%}
+        },
+        BRL: {
+          rate: {{ rates.BRL }},
+          {%- raw -%}format: 'R${{ amount }}'{%- endraw -%}
+        },
+        CAD: {
+          rate: {{ rates.CAD }},
+          {%- raw -%}format: 'CA${{ amount }}'{%- endraw -%}
+        },
+        CHF: {
+          rate: {{ rates.CHF }},
+          {%- raw -%}format: 'CHF{{ amount }}'{%- endraw -%}
+        },
+        DKK: {
+          rate: {{ rates.DKK }},
+          {%- raw -%}format: 'DKK{{ amount }}'{%- endraw -%}
+        },
+        EUR: {
+          rate: {{ rates.EUR }},
+          {%- raw -%}format: '€{{ amount }}'{%- endraw -%}
+        },
+        GBP: {
+          rate: {{ rates.GBP }},
+          {%- raw -%}format: '£{{ amount }}'{%- endraw -%}
+        },
+        HKD: {
+          rate: {{ rates.HKD }},
+          {%- raw -%}format: 'HK${{ amount }}'{%- endraw -%}
+        },
+        NOK: {
+          rate: {{ rates.NOK }},
+          {%- raw -%}format: 'NOK{{ amount }}'{%- endraw -%}
+        },
+        NZD: {
+          rate: {{ rates.NZD }},
+          {%- raw -%}format: 'NZ${{ amount }}'{%- endraw -%}
+        },
+        SEK: {
+          rate: {{ rates.SEK }},
+          {%- raw -%}format: 'SEK{{ amount }}'{%- endraw -%}
+        },
+        ZAR: {
+          rate: {{ rates.ZAR }},
+          {%- raw -%}format: 'ZAR{{ amount }}'{%- endraw -%}
+        },
+        YEN: {
+          rate: {{ rates.JPY }},
+          {%- raw -%}format: '¥{{ amount }}'{%- endraw -%}
+        },
+        USD: {
+          rate: 1,
+          {%- raw -%}format: '${{ amount }}'{%- endraw -%}
+        }
+      },
+      
+      current_currency: localStorage.getItem('saved_currency') || 'USD',
+      mode: 'desktop',
+      run: function() {
+        document.querySelectorAll('[data-money]').forEach(function(e) {
+          if (!e.dataset.base) {
+            if (e.innerHTML != '') {
+              e.dataset.base = Number(e.innerHTML.replace('$', '').replace(',', '')) * 100
+              e.dataset.basec = 'USD';
+              if (window.EXCHANGE.current_currency == 'USD') {
+                e.dataset.show = '1'
+              }
+            }
+          }
+  
+          if (e.dataset.basec != window.EXCHANGE.current_currency) {
+            var cur = window.EXCHANGE.currencies[window.EXCHANGE.current_currency];
+            e.innerHTML = Shopify.formatMoney(e.dataset.base * cur.rate, cur.format)
+            e.dataset.basec = window.EXCHANGE.current_currency
+            e.dataset.show = '1'
+          }
+        })
+      },
+      ex: function(value) {
+        var cur = window.EXCHANGE.currencies[window.EXCHANGE.current_currency];
+        return Shopify.formatMoney(value * cur.rate, cur.format)
+      },
+      init: function() {
+        document.addEventListener('change', function(e) {
+          if (e.target.parentNode.id == 'currency-switch') {
+            if (e.target.value != window.EXCHANGE.current_currency) {
+              window.EXCHANGE.current_currency = e.target.value
+              localStorage.setItem('saved_currency', e.target.value)
+            }
+          }
+        });
+        document.addEventListener('click', function(e) {
+          if (e.target.id == 'selected-currency') {
+            e.target.closest('.drop').classList.toggle('show')
+          } else {
+            document.querySelectorAll('#currency-switch .drop').forEach(function(el) {
+              el.classList.remove('show')
+            })
+            if (e.target.dataset.cur && e.target.dataset.cur != window.EXCHANGE.current_currency) {
+              window.EXCHANGE.current_currency = e.target.dataset.cur
+              localStorage.setItem('saved_currency', e.target.dataset.cur)
+              document.querySelectorAll('#selected-currency').forEach(function(el) {
+                el.dataset.cur = e.target.dataset.cur
+                el.innerText = e.target.dataset.cur
+              })
+              
+              document.querySelector('html').dataset.currency = e.target.dataset.cur;
+            }
+          }
+        });
+  
+        document.querySelector('html').dataset.currency = window.EXCHANGE.current_currency;
+
+        document.addEventListener('DOMContentLoaded', function () {
+          window.EXCHANGE.run();
+          setInterval(window.EXCHANGE.run, 100);
+          window.addEventListener('resize', window.EXCHANGE.resize);
+        });
+      },
+      resize: function() {
+        if (window.outerWidth > 1024 && window.EXCHANGE.mode == 'mobile') {
+          window.EXCHANGE.mode = 'desktop';
+          //var s = document.querySelector('.hamburger_menu .currency-wrapper #currency-switch');
+          //var t = document.querySelector('.header__actions .currency-wrapper');
+          //t.appendChild(s);
+          document.querySelector('.min_shipping_msg #currency-switch').remove();
+        }
+        if (window.outerWidth < 1025 && window.EXCHANGE.mode == 'desktop') {
+          window.EXCHANGE.mode = 'mobile'
+          var s = document.querySelector('.header__actions .currency-wrapper #currency-switch');
+          var t = document.querySelector('.menu-drawer__navigation-container .currency-wrapper');
+          var x = document.querySelector('.min_shipping_msg .currency-wrapper');
+          var y = s.cloneNode(true);
+          t.appendChild(s);
+          x.appendChild(y);
+        }
+      }
+    }
+  
+    window.EXCHANGE.init();
+  </script>

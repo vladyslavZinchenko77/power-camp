@@ -1,0 +1,154 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "02980f6b-17c7-4c2a-805d-ecfd551a1157": {
+      "type": "marquee",
+      "blocks": {
+        "9860c9d3-0d12-42db-9c29-99836469068d": {
+          "type": "message",
+          "settings": {
+            "title": "EUR",
+            "message": "Fast Economical Shipping to the EU"
+          }
+        },
+        "e8b43ae8-b964-4ce5-9f25-3339f80e1e9e": {
+          "type": "message",
+          "settings": {
+            "title": "CAD",
+            "message": "Fast Economical Shipping to Canada"
+          }
+        },
+        "2b63274b-e968-4d7d-a449-e8040e5182e2": {
+          "type": "message",
+          "settings": {
+            "title": "YEN",
+            "message": "Fast Economical Shipping to Japan"
+          }
+        },
+        "db607f38-2b33-4eb2-a298-b1f48b6b0632": {
+          "type": "message",
+          "settings": {
+            "title": "AUD",
+            "message": "Fast Economical Shipping to Australia"
+          }
+        },
+        "da9f9cff-4843-46bd-9c3d-9f850052dd00": {
+          "type": "message",
+          "settings": {
+            "title": "DKK",
+            "message": "Fast Economical Shipping to Denmark"
+          }
+        },
+        "5ff4733f-fb02-40fc-80fa-65842d5c9303": {
+          "type": "message",
+          "settings": {
+            "title": "GBP",
+            "message": "Fast Economical Shipping to the UK"
+          }
+        },
+        "f4c6b2e8-6f38-4f29-a0eb-2fa75b632b4d": {
+          "type": "message",
+          "settings": {
+            "title": "NOK",
+            "message": "Fast Economical Shipping to Norway"
+          }
+        },
+        "c8119e16-402b-450e-a530-e9ae25d1f10b": {
+          "type": "message",
+          "settings": {
+            "title": "SEK",
+            "message": "Fast Economical Shipping to Sweden"
+          }
+        },
+        "187fb08b-9686-4f00-8335-0a576d48b580": {
+          "type": "message",
+          "settings": {
+            "title": "CHF",
+            "message": "Fast Economical Shipping to Switzerland"
+          }
+        },
+        "73580bb6-cec0-48fd-8759-9499a6bd3247": {
+          "type": "message",
+          "settings": {
+            "title": "HKD",
+            "message": "Fast Economical Shipping to Hong Kong"
+          }
+        },
+        "8b99e93b-491d-4766-9cd4-789043523244": {
+          "type": "message",
+          "settings": {
+            "title": "NZD",
+            "message": "Fast Economical Shipping to New Zealand"
+          }
+        },
+        "9f88eda2-f3a5-4ad8-b59d-bbbc76ca829a": {
+          "type": "message",
+          "settings": {
+            "title": "BRL",
+            "message": "Fast Economical Shipping to Brazil"
+          }
+        },
+        "5e980a70-3ff7-4970-98b4-e0a928177204": {
+          "type": "message",
+          "settings": {
+            "title": "ZAR",
+            "message": "Fast Economical Shipping to South Africa"
+          }
+        }
+      },
+      "block_order": [
+        "9860c9d3-0d12-42db-9c29-99836469068d",
+        "e8b43ae8-b964-4ce5-9f25-3339f80e1e9e",
+        "2b63274b-e968-4d7d-a449-e8040e5182e2",
+        "db607f38-2b33-4eb2-a298-b1f48b6b0632",
+        "da9f9cff-4843-46bd-9c3d-9f850052dd00",
+        "5ff4733f-fb02-40fc-80fa-65842d5c9303",
+        "f4c6b2e8-6f38-4f29-a0eb-2fa75b632b4d",
+        "c8119e16-402b-450e-a530-e9ae25d1f10b",
+        "187fb08b-9686-4f00-8335-0a576d48b580",
+        "73580bb6-cec0-48fd-8759-9499a6bd3247",
+        "8b99e93b-491d-4766-9cd4-789043523244",
+        "9f88eda2-f3a5-4ad8-b59d-bbbc76ca829a",
+        "5e980a70-3ff7-4970-98b4-e0a928177204"
+      ],
+      "settings": {
+        "general_message": "",
+        "enable_geo": true,
+        "international_message": "Fast affordable international shipping!",
+        "us_message": "Free US Shipping on Orders Over $99.00.",
+        "enable_shipping_min": true,
+        "minimum_shipping_message": "Free US Shipping on Orders Over $99.00.",
+        "shipping_min": "9900"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "bg_color": "#1d245b",
+        "text_color": "#ffffff",
+        "header_logo": "shopify:\/\/shop_images\/BoyzShop-Logo-Shopify-Final-295.jpg",
+        "logo_position": "middle-left",
+        "menu": "hamburger-menu",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_support_content": true,
+        "support_image": "shopify:\/\/shop_images\/information_1_40x40_2abc3c67-61de-49a2-83df-5e2f54295e6c.png",
+        "support_link": "shopify:\/\/pages\/contact-us-1"
+      }
+    }
+  },
+  "order": [
+    "02980f6b-17c7-4c2a-805d-ecfd551a1157",
+    "header"
+  ]
+}
