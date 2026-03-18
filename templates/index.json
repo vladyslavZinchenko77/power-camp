@@ -1,66 +1,28 @@
 {
   "sections": {
-    "5ea93979-a80d-4d2d-8a4f-60fce9a7ea0f": {
-      "type": "image-grid",
+    "hero_banner": {
+      "type": "image-banner",
       "blocks": {
-        "eb6befef-bc21-42a5-a8d0-8b046ba880ff": {
-          "type": "Image",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/GUPH-1900x625.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/GUPH-750x600.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/best-selling",
-            "loading": "eager",
-            "fetchpriority": "high"
-          }
-        },
-        "image_KVgRde": {
-          "type": "Image",
-          "disabled": true,
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/ShopOurHolidayGuide-1900x625_harness.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/ShopOurHolidayGuide-750x600_harness.jpg",
-            "title": "",
-            "url": "shopify:\/\/pages\/holiday-gift-guide",
-            "loading": "eager",
-            "fetchpriority": "high"
-          }
-        }
-      },
-      "block_order": [
-        "eb6befef-bc21-42a5-a8d0-8b046ba880ff",
-        "image_KVgRde"
-      ],
-      "settings": {
-        "desktop_space": 24,
-        "mobile_space": 24,
-        "columns_desktop": 1,
-        "columns_mobile": 1,
-        "width": "full"
-      }
-    },
-    "rich_text_welcome": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_welcome": {
+        "hero_heading": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to Power Camp",
+            "heading": "Welcome to <em>Power Camp</em>",
             "heading_size": "h0"
           }
         },
-        "text_welcome": {
+        "hero_text": {
           "type": "text",
           "settings": {
-            "text": "<p>Your trusted source for premium adult products. Discreet packaging, fast shipping, and exceptional quality guaranteed.</p>"
+            "text": "Premium quality. Discreet packaging. Fast shipping worldwide.",
+            "text_style": "subtitle"
           }
         },
-        "button_welcome": {
-          "type": "button",
+        "hero_buttons": {
+          "type": "buttons",
           "settings": {
-            "button_label": "Shop All",
-            "button_link": "shopify:\/\/collections\/all",
-            "button_style_secondary": false,
+            "button_label_1": "Shop All",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
             "button_label_2": "Best Sellers",
             "button_link_2": "shopify:\/\/collections\/best-selling",
             "button_style_secondary_2": true
@@ -68,17 +30,21 @@
         }
       },
       "block_order": [
-        "heading_welcome",
-        "text_welcome",
-        "button_welcome"
+        "hero_heading",
+        "hero_text",
+        "hero_buttons"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
         "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 52,
-        "padding_bottom": 52
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
       }
     },
     "featured_collection_1": {
@@ -273,8 +239,7 @@
     }
   },
   "order": [
-    "5ea93979-a80d-4d2d-8a4f-60fce9a7ea0f",
-    "rich_text_welcome",
+    "hero_banner",
     "featured_collection_1",
     "ad709aa3-ff33-4cc1-8602-0ec445a8371a",
     "collection_list_main",
