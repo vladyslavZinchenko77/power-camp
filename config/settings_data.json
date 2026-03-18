@@ -212,7 +212,7 @@
           "intl_shipping_success_message": "You've unlocked all rewards!",
           "intl_shipping_bar_color": "#05aff2",
           "intl_shipping_bar_fill_color": "#ffffff",
-          "enable_recommendations": false,
+          "enable_recommendations": true,
           "recommendations_title": "You may also like",
           "recommendations_limit": 6,
           "recommendations_scrollable_mobile": true,
