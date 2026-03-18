@@ -2,6 +2,48 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "announcement_bar_main": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announce_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free US Shipping on Orders Over $99",
+            "link": ""
+          }
+        },
+        "announce_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Discreet Packaging on All Orders",
+            "link": ""
+          }
+        },
+        "announce_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "99% of Orders Ship Within 1 Business Day",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announce_1",
+        "announce_2",
+        "announce_3"
+      ],
+      "settings": {
+        "bg_color": "#05aff2",
+        "text_color": "#ffffff",
+        "color_scheme": "accent-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
     "02980f6b-17c7-4c2a-805d-ecfd551a1157": {
       "type": "marquee",
       "blocks": {
@@ -148,6 +190,7 @@
     }
   },
   "order": [
+    "announcement_bar_main",
     "02980f6b-17c7-4c2a-805d-ecfd551a1157",
     "header"
   ]
