@@ -1,0 +1,260 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .promo-sale-banner-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    border-right: 1px solid {{ section.settings.divider_color }};
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__subtitle {
+    font-size: 1.2rem;
+    color: {{ section.settings.accent_color }};
+    margin: 0 0 8px;
+    font-weight: 400;
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__big-text {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    margin: 0;
+    color: {{ section.settings.text_color }};
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__right {
+    flex: 1;
+    padding: 40px 60px;
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__heading {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+    margin: 0 0 16px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 24px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .promo-sale-banner-{{ section.id }} .promo-sale-banner__button:hover {
+    opacity: 0.85;
+  }
+
+  @media screen and (max-width: 749px) {
+    .promo-sale-banner-{{ section.id }} .promo-sale-banner__wrapper {
+      flex-direction: column;
+    }
+
+    .promo-sale-banner-{{ section.id }} .promo-sale-banner__left {
+      border-right: none;
+      border-bottom: 1px solid {{ section.settings.divider_color }};
+      padding: 32px 20px;
+    }
+
+    .promo-sale-banner-{{ section.id }} .promo-sale-banner__right {
+      padding: 32px 20px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="promo-sale-banner-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="promo-sale-banner__wrapper">
+      <div class="promo-sale-banner__left">
+        {%- if section.settings.left_subtitle != blank -%}
+          <p class="promo-sale-banner__subtitle">{{ section.settings.left_subtitle | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.left_big_text != blank -%}
+          <p class="promo-sale-banner__big-text">{{ section.settings.left_big_text | escape }}</p>
+        {%- endif -%}
+      </div>
+      <div class="promo-sale-banner__right">
+        {%- if section.settings.right_heading != blank -%}
+          <h2 class="promo-sale-banner__heading">{{ section.settings.right_heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.right_description != blank -%}
+          <div class="promo-sale-banner__description rte">{{ section.settings.right_description }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="promo-sale-banner__button"
+            {% if section.settings.button_link == blank %}role="link" aria-disabled="true"{% endif %}
+          >
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "x-Promo sale banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left side"
+    },
+    {
+      "type": "text",
+      "id": "left_subtitle",
+      "default": "20% Off",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "left_big_text",
+      "default": "SALE",
+      "label": "Big text"
+    },
+    {
+      "type": "header",
+      "content": "Right side"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "default": "Buy 3 Get 20% Off",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "right_description",
+      "default": "<p>Get extra discount on all items! Buy <strong>2 items and Get 15%</strong> off! <strong>Buy 3 items and Get 20%</strong> off on each item all the store!</p>",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Shop Now",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "default": "#ffffff",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#1a1a1a",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "default": "#e53e3e",
+      "label": "Subtitle color"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "default": "#d4d4d4",
+      "label": "Divider color"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "default": "#1a1a1a",
+      "label": "Button background"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "default": "#ffffff",
+      "label": "Button text color"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "x-Promo sale banner"
+    }
+  ]
+}
+{% endschema %}

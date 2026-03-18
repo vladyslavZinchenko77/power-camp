@@ -118,6 +118,25 @@
         "width": "full"
       }
     },
+    "promo_sale": {
+      "type": "x-promo-sale-banner",
+      "settings": {
+        "left_subtitle": "20% Off",
+        "left_big_text": "SALE",
+        "right_heading": "Buy 3 Get 20% Off",
+        "right_description": "<p>Get extra discount on all items! Buy <strong>2 items and Get 15%</strong> off! <strong>Buy 3 items and Get 20%</strong> off on each item all the store!</p>",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/all",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "accent_color": "#e53e3e",
+        "divider_color": "#d4d4d4",
+        "button_bg_color": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "collection_list_main": {
       "type": "collection-list",
       "blocks": {
@@ -246,7 +265,7 @@
   "order": [
     "hero_banner",
     "featured_collection_1",
-    "ad709aa3-ff33-4cc1-8602-0ec445a8371a",
+    "promo_sale",
     "collection_list_main",
     "featured_collection_2",
     "featured_collection_3",
