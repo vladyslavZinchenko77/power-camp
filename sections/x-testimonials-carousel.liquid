@@ -1,0 +1,439 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .x-testimonials-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 40px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__card {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__star {
+    color: {{ section.settings.star_color }};
+    font-size: 2rem;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__text {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 24px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__author {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-style: italic;
+    color: {{ section.settings.author_color }};
+    margin: 0;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__slider-wrapper {
+    position: relative;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background-color 0.2s, border-color 0.2s;
+    color: {{ section.settings.text_color }};
+    padding: 0;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__nav:hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__nav--prev {
+    left: -20px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__nav--next {
+    right: -20px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__nav svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .x-testimonials-{{ section.id }} .x-testimonials__dot.active {
+    background: {{ section.settings.text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .x-testimonials-{{ section.id }} .x-testimonials__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .x-testimonials-{{ section.id }} .x-testimonials__nav {
+      display: none;
+    }
+
+    .x-testimonials-{{ section.id }} .x-testimonials__card {
+      display: none;
+    }
+
+    .x-testimonials-{{ section.id }} .x-testimonials__card.mobile-active {
+      display: block;
+    }
+  }
+{%- endstyle -%}
+
+<div class="x-testimonials-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="x-testimonials__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+
+    <div class="x-testimonials__slider-wrapper" id="x-testimonials-{{ section.id }}">
+      <button class="x-testimonials__nav x-testimonials__nav--prev" aria-label="Previous testimonials">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <ul class="x-testimonials__grid" data-page="0">
+        {%- for block in section.blocks -%}
+          <li class="x-testimonials__card{% if forloop.index <= 3 %} mobile-active{% endif %}" {{ block.shopify_attributes }} data-index="{{ forloop.index0 }}">
+            <div class="x-testimonials__icon">
+              {%- case block.settings.platform -%}
+                {%- when 'facebook' -%}
+                  <svg viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="25" fill="#1877F2"/><path d="M31.5 26.5l.8-5.2h-5V18c0-1.4.7-2.8 3-2.8h2.3v-4.4s-2.1-.4-4.1-.4c-4.2 0-6.9 2.5-6.9 7.1v4h-4.6v5.2h4.6V40h5.7V26.5h4.2z" fill="#fff"/></svg>
+                {%- when 'google' -%}
+                  <svg viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="25" fill="#fff" stroke="#ddd" stroke-width="1"/><path d="M35.5 25.2c0-.8-.1-1.5-.2-2.2H25v4.2h5.9c-.3 1.4-1 2.6-2.2 3.4v2.8h3.5c2.1-1.9 3.3-4.7 3.3-8.2z" fill="#4285F4"/><path d="M25 36c3 0 5.5-1 7.3-2.7l-3.5-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6h-3.6v2.9C16.9 33.4 20.7 36 25 36z" fill="#34A853"/><path d="M18.7 26.9c-.2-.7-.4-1.4-.4-2.2s.1-1.5.4-2.2v-2.9h-3.6C14.4 21.1 14 23 14 25s.4 3.9 1.1 5.4l3.6-2.9v-.6z" fill="#FBBC05"/><path d="M25 18.4c1.6 0 3.1.6 4.3 1.7l3.2-3.2C30.5 15.1 28 14 25 14c-4.3 0-8.1 2.6-9.9 6.3l3.6 2.9c.9-2.6 3.4-4.8 6.3-4.8z" fill="#EA4335"/></svg>
+                {%- when 'instagram' -%}
+                  <svg viewBox="0 0 50 50" fill="none"><defs><linearGradient id="ig-{{ block.id }}" x1="5" y1="45" x2="45" y2="5"><stop stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><circle cx="25" cy="25" r="25" fill="url(#ig-{{ block.id }})"/><rect x="14" y="14" width="22" height="22" rx="6" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="25" cy="25" r="5" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="32.5" cy="17.5" r="1.5" fill="#fff"/></svg>
+                {%- when 'trustpilot' -%}
+                  <svg viewBox="0 0 50 50" fill="none"><circle cx="25" cy="25" r="25" fill="#00b67a"/><path d="M25 15l3.1 9.5H38l-8 5.8 3 9.5-8-5.8-8 5.8 3-9.5-8-5.8h9.9L25 15z" fill="#fff"/></svg>
+              {%- endcase -%}
+            </div>
+
+            <div class="x-testimonials__stars">
+              {%- assign stars = block.settings.rating | default: 5 -%}
+              {%- for i in (1..5) -%}
+                {%- if i <= stars -%}
+                  <span class="x-testimonials__star">&#9733;</span>
+                {%- else -%}
+                  <span class="x-testimonials__star" style="color: #ddd;">&#9733;</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            {%- if block.settings.text != blank -%}
+              <p class="x-testimonials__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+
+            {%- if block.settings.author != blank -%}
+              <p class="x-testimonials__author">{{ block.settings.author | escape }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <button class="x-testimonials__nav x-testimonials__nav--next" aria-label="Next testimonials">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      {%- assign total_pages = section.blocks.size | minus: 1 | divided_by: 3 | plus: 1 -%}
+      {%- if total_pages > 1 -%}
+        <div class="x-testimonials__dots">
+          {%- for i in (1..total_pages) -%}
+            <button class="x-testimonials__dot{% if forloop.first %} active{% endif %}" data-page="{{ forloop.index0 }}" aria-label="Page {{ forloop.index }}"></button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var section = document.getElementById('x-testimonials-{{ section.id }}');
+    if (!section) return;
+
+    var cards = section.querySelectorAll('.x-testimonials__card');
+    var dots = section.querySelectorAll('.x-testimonials__dot');
+    var prevBtn = section.querySelector('.x-testimonials__nav--prev');
+    var nextBtn = section.querySelector('.x-testimonials__nav--next');
+    var perPage = window.innerWidth < 750 ? 1 : 3;
+    var currentPage = 0;
+    var totalPages = Math.ceil(cards.length / perPage);
+
+    function showPage(page) {
+      currentPage = page;
+      var start = page * perPage;
+      var end = start + perPage;
+
+      cards.forEach(function(card, i) {
+        if (window.innerWidth < 750) {
+          card.classList.toggle('mobile-active', i >= start && i < end);
+        } else {
+          card.style.display = (i >= start && i < end) ? '' : 'none';
+        }
+      });
+
+      dots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === page);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        showPage(currentPage > 0 ? currentPage - 1 : totalPages - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        showPage(currentPage < totalPages - 1 ? currentPage + 1 : 0);
+      });
+    }
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        showPage(parseInt(dot.dataset.page));
+      });
+    });
+
+    window.addEventListener('resize', function() {
+      var newPerPage = window.innerWidth < 750 ? 1 : 3;
+      if (newPerPage !== perPage) {
+        perPage = newPerPage;
+        totalPages = Math.ceil(cards.length / perPage);
+        showPage(0);
+      }
+    });
+
+    showPage(0);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "x-Testimonials carousel",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "WHAT OUR CUSTOMERS SAY",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "default": "#ffffff",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "#1a1a1a",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "default": "#22c55e",
+      "label": "Author name color"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "default": "#f5a623",
+      "label": "Star color"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "select",
+          "id": "platform",
+          "options": [
+            { "value": "facebook", "label": "Facebook" },
+            { "value": "google", "label": "Google" },
+            { "value": "instagram", "label": "Instagram" },
+            { "value": "trustpilot", "label": "Trustpilot" }
+          ],
+          "default": "facebook",
+          "label": "Platform icon"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Star rating"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Great product! Highly recommended.",
+          "label": "Review text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "default": "Customer Name",
+          "label": "Author name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "x-Testimonials carousel",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "The blade takes and keeps a razor sharp edge that makes carving a dream. Strongly recommended!",
+            "author": "John Murray"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "I have numerous tools, every one of them came razor sharp and ready to use straight out of the box. Very good quality.",
+            "author": "Tina Hammond"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "platform": "facebook",
+            "rating": 5,
+            "text": "All of the tools I have ordered have been reasonably priced and generally exceeded my expectations. Highly recommend!",
+            "author": "Don Smerker"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
