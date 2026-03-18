@@ -39,6 +39,76 @@
         "width": "full"
       }
     },
+    "rich_text_welcome": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_welcome": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to Power Camp",
+            "heading_size": "h0"
+          }
+        },
+        "text_welcome": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your trusted source for premium adult products. Discreet packaging, fast shipping, and exceptional quality guaranteed.</p>"
+          }
+        },
+        "button_welcome": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop All",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style_secondary": false,
+            "button_label_2": "Best Sellers",
+            "button_link_2": "shopify:\/\/collections\/best-selling",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_welcome",
+        "text_welcome",
+        "button_welcome"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection_1": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "ad709aa3-ff33-4cc1-8602-0ec445a8371a": {
       "type": "image-grid",
       "blocks": {
@@ -77,168 +147,121 @@
         "width": "full"
       }
     },
-    "78cf2840-4c78-4298-8ee2-02d190b49884": {
-      "type": "image-grid",
+    "collection_list_main": {
+      "type": "collection-list",
       "blocks": {
-        "a72896bd-9761-40d0-8e14-ffc3fc281e3d": {
-          "type": "Image",
+        "collection_1": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/anal-toys_550x550-2b2.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/anal-toys_550x550-2b2.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/anal-toys",
-            "loading": "default",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         },
-        "1430c8d2-b22f-4117-b35e-f161f37e5d8f": {
-          "type": "Image",
+        "collection_2": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/dildos_550x550-2.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/dildos_550x550-2.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/dildos",
-            "loading": "default",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         },
-        "8d9936a2-f427-428d-9974-9ee3f3ae9947": {
-          "type": "Image",
+        "collection_3": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/cock-ball-gear_550x550b.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/cock-ball-gear_550x550b.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/cock-ball-gear",
-            "loading": "lazy",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         },
-        "image_EBHDba": {
-          "type": "Image",
+        "collection_4": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/bdsm_550x550b.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/bdsm_550x550b.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/bdsm-kink-fetish",
-            "loading": "lazy",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         },
-        "image_pUjHQw": {
-          "type": "Image",
+        "collection_5": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/vibrating_550x550b.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/vibrating_550x550b.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/vibrating-sex-toys",
-            "loading": "lazy",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         },
-        "image_EG34Hc": {
-          "type": "Image",
+        "collection_6": {
+          "type": "featured_collection",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/enema_550x550-2.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/enema_550x550-2.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/lube-enema-prep",
-            "loading": "lazy",
-            "fetchpriority": "auto"
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "a72896bd-9761-40d0-8e14-ffc3fc281e3d",
-        "1430c8d2-b22f-4117-b35e-f161f37e5d8f",
-        "8d9936a2-f427-428d-9974-9ee3f3ae9947",
-        "image_EBHDba",
-        "image_pUjHQw",
-        "image_EG34Hc"
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4",
+        "collection_5",
+        "collection_6"
       ],
       "settings": {
-        "desktop_space": 24,
-        "mobile_space": 24,
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "image_ratio": "square",
         "columns_desktop": 3,
-        "columns_mobile": 2,
-        "width": "full"
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "adb9a974-440d-4990-a5b5-56d521436819": {
-      "type": "image-grid",
-      "blocks": {
-        "9ca3ce62-1e5e-494f-977a-e9770934512c": {
-          "type": "Image",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/NewArrivals-900x500.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/NewArrivals-900x900.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/new-items",
-            "loading": "lazy",
-            "fetchpriority": "auto"
-          }
-        },
-        "369ababd-f993-43c4-bdca-6d3b0ba6863f": {
-          "type": "Image",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/BestSellers-900x500_ef4818b1-bb84-4d4f-a03e-216e58be15e8.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/BestSellers-900x900_e809ef9f-6c17-4bb6-9b1d-a6a0d92eeee4.jpg",
-            "title": "",
-            "url": "https:\/\/www.boyzshop.com\/collections\/best-selling",
-            "loading": "lazy",
-            "fetchpriority": "auto"
-          }
-        }
-      },
-      "block_order": [
-        "9ca3ce62-1e5e-494f-977a-e9770934512c",
-        "369ababd-f993-43c4-bdca-6d3b0ba6863f"
-      ],
+    "featured_collection_2": {
+      "type": "featured-collection",
       "settings": {
-        "desktop_space": 0,
-        "mobile_space": 0,
-        "columns_desktop": 2,
-        "columns_mobile": 1,
-        "width": "full"
+        "title": "New Arrivals",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "image_grid_NWaF9D": {
-      "type": "image-grid",
-      "blocks": {
-        "image_JWUW66": {
-          "type": "Image",
-          "disabled": true,
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/TopRated-900x500.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/TopRated-900x900.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/top-rated-products",
-            "loading": "lazy",
-            "fetchpriority": "auto"
-          }
-        },
-        "image_q78c8h": {
-          "type": "Image",
-          "disabled": true,
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/Under50-900x500.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Under50-900x900.jpg",
-            "title": "",
-            "url": "shopify:\/\/collections\/luxe-gifts",
-            "loading": "lazy",
-            "fetchpriority": "auto"
-          }
-        }
-      },
-      "block_order": [
-        "image_JWUW66",
-        "image_q78c8h"
-      ],
+    "featured_collection_3": {
+      "type": "featured-collection",
       "settings": {
-        "desktop_space": 24,
-        "mobile_space": 23,
-        "columns_desktop": 2,
-        "columns_mobile": 2,
-        "width": "full"
+        "title": "Best Sellers",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "08370bc9-8552-4396-86cb-0d5ef007c92b": {
@@ -251,10 +274,12 @@
   },
   "order": [
     "5ea93979-a80d-4d2d-8a4f-60fce9a7ea0f",
+    "rich_text_welcome",
+    "featured_collection_1",
     "ad709aa3-ff33-4cc1-8602-0ec445a8371a",
-    "78cf2840-4c78-4298-8ee2-02d190b49884",
-    "adb9a974-440d-4990-a5b5-56d521436819",
-    "image_grid_NWaF9D",
+    "collection_list_main",
+    "featured_collection_2",
+    "featured_collection_3",
     "08370bc9-8552-4396-86cb-0d5ef007c92b"
   ]
 }
