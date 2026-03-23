@@ -17,6 +17,7 @@
         "60b232b2-7073-4ba5-bc35-5837092f3795": {
           "type": "Icon",
           "settings": {
+            "image": "shopify://shop_images/1.png",
             "title": "DELIVERED ANYWHERE",
             "url": ""
           }
