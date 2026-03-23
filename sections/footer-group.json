@@ -33,6 +33,7 @@
         "71878c45-e09e-49c7-9ac3-9f21953f7d04": {
           "type": "Icon",
           "settings": {
+            "image": "shopify://shop_images/3.png",
             "title": "DAMAGE-FREE GUARANTEE",
             "url": ""
           }
