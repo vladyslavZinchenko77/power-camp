@@ -17,15 +17,13 @@
         "60b232b2-7073-4ba5-bc35-5837092f3795": {
           "type": "Icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/worldwide-180.png",
-            "title": "WORLDWIDE SHIPPING",
+            "title": "DELIVERED ANYWHERE",
             "url": ""
           }
         },
         "492bd92d-8cd2-4236-83b5-9374dd87b226": {
           "type": "Icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2.png",
             "title": "99% OF ORDERS SHIP WITHIN 1 BUSINESS DAY",
             "url": ""
           }
@@ -33,7 +31,6 @@
         "71878c45-e09e-49c7-9ac3-9f21953f7d04": {
           "type": "Icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3.png",
             "title": "DISCREET PACKAGING",
             "url": ""
           }
@@ -41,7 +38,6 @@
         "b8eeb731-c576-439a-8880-87deb8538c9a": {
           "type": "Icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4.png",
             "title": "SECURE SHOPPING",
             "url": ""
           }
@@ -82,14 +78,14 @@
           "type": "link",
           "settings": {
             "title": "About Us",
-            "footer_menu": "footer-menu-2"
+            "footer_menu": ""
           }
         },
         "7ff1040f-ec96-446e-8462-e77d5f15cc53": {
           "type": "link",
           "settings": {
             "title": "Help",
-            "footer_menu": "footer-3"
+            "footer_menu": ""
           }
         }
       },
@@ -101,7 +97,6 @@
       "settings": {
         "bg_color": "#1a1a1a",
         "text_color": "#ffffff",
-        "footer_logo": "shopify:\/\/shop_images\/BoyzShop-Footer-Logo-White-Transparent.png",
         "contact_cta": "",
         "contact_url": ""
       }
@@ -139,10 +134,10 @@
         "bg_color": "#1a1a1a",
         "footer-text": "All rights reserved. Power Camp - Portable Power Solutions.",
         "show_payment_icons": true,
-        "paypal_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-paypal-2.png?14638",
-        "mastercard_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-mastercard-2.png?14638",
-        "visa_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-visa-2.png?14638",
-        "amex_payment": "https:\/\/cdn.shopify.com\/s\/files\/1\/0266\/4339\/8691\/files\/bs-amex-2.png?14638"
+        "paypal_payment": "https://cdn.shopify.com/s/files/1/0266/4339/8691/files/bs-paypal-2.png?14638",
+        "mastercard_payment": "https://cdn.shopify.com/s/files/1/0266/4339/8691/files/bs-mastercard-2.png?14638",
+        "visa_payment": "https://cdn.shopify.com/s/files/1/0266/4339/8691/files/bs-visa-2.png?14638",
+        "amex_payment": "https://cdn.shopify.com/s/files/1/0266/4339/8691/files/bs-amex-2.png?14638"
       }
     },
     "footer": {
