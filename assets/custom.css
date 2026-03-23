@@ -597,7 +597,7 @@ fieldset.product-form__input .form__label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #e1e1e1;
+  background: #22c55e;
   padding: 30px 15px;
 }
 
@@ -668,8 +668,8 @@ fieldset.product-form__input .form__label {
   position: relative;
   max-width: 150px;
   padding: 14px 18px;
-  background: #05aff2;
-  border: 1px solid #05aff2;
+  background: #1a1a1a;
+  border: 1px solid #1a1a1a;
   text-align: center;
   display: flex;
   align-items: center;
