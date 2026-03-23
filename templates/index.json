@@ -44,6 +44,7 @@
         "hero_buttons"
       ],
       "settings": {
+        "image": "shopify://shop_images/pexels-uriel-mont-6271392.jpg",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "middle-center",
