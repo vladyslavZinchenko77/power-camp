@@ -25,6 +25,7 @@
         "492bd92d-8cd2-4236-83b5-9374dd87b226": {
           "type": "Icon",
           "settings": {
+            "image": "shopify://shop_images/2.png",
             "title": "ORDER TODAY, SHIPS TOMORROW",
             "url": ""
           }
