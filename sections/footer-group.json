@@ -105,6 +105,54 @@
         "contact_url": ""
       }
     },
+    "footer_nav": {
+      "type": "x-footer-nav",
+      "blocks": {
+        "nav_menu_1": {
+          "type": "menu",
+          "settings": {
+            "title": "Customer Service",
+            "menu": "footer"
+          }
+        },
+        "nav_menu_2": {
+          "type": "menu",
+          "settings": {
+            "title": "About Us",
+            "menu": ""
+          }
+        },
+        "nav_menu_3": {
+          "type": "menu",
+          "settings": {
+            "title": "Help",
+            "menu": ""
+          }
+        },
+        "nav_newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Stay Connected",
+            "newsletter_text": "Sign up for exclusive updates, new arrivals & insider only discounts",
+            "placeholder": "Enter your email",
+            "button_label": "Submit"
+          }
+        }
+      },
+      "block_order": [
+        "nav_menu_1",
+        "nav_menu_2",
+        "nav_menu_3",
+        "nav_newsletter"
+      ],
+      "settings": {
+        "bg_color": "#1a1a1a",
+        "text_color": "#ffffff",
+        "link_color": "#bbbbbb",
+        "button_bg_color": "#c4956a",
+        "button_text_color": "#ffffff"
+      }
+    },
     "footer_reviews": {
       "type": "x-footer-reviews",
       "blocks": {
@@ -166,6 +214,7 @@
   "order": [
     "19e71002-8b0e-453e-84f7-19aa57d9b21e",
     "7941ee74-630d-45f6-8257-8a4d7b04335d",
+    "footer_nav",
     "footer_reviews",
     "cd663c80-0fe6-4ee3-b698-103e1eb3db0c",
     "footer"
