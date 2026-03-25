@@ -12,37 +12,7 @@
     data-section-type="Footer"
     style="background-color: {{ section.settings.bg_color }};"
   >
-    <article class="footer__navigation page-width" style="color: {{ section.settings.text_color }};">
-    <div class="footer__contact--logo showDesktop">
-      <div class="badge_static"><a href="/pages/reviews"><span class="count">1,128</span><span class="pb">Powered by YOTPO</span><img class='lazy' src="{{ 'badge_static.png' | asset_url }}" width="152" height="138" alt="review badge" loading="auto" /></a></div>
-      {% comment %}
-      <a href="/">
-        <img src="{{ section.settings.footer_logo | img_url: '720x440' }}" />
-      </a>
-      {% endcomment %}
-    </div>
-    {%- for block in section.blocks -%}
-      <div class="footer__navigation--menu">
-        <label class="footer__navigation--menu-title"><span>{{ block.settings.title }}</span></label>
-            <ul class="footer__navigation--menu-list">
-              {%- for link in linklists[block.settings.footer_menu].links -%}
-                <li class="footer__navigation--menu-list-item">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-              {%- endfor -%}
-            </ul>
-        </div>
-      {%- endfor -%}
-    </article>
-
-    <div class="footer__contact--logo showTablet">
-      <div class="badge_static"><a href="/pages/reviews"><span class="count">1,128</span><span class="pb">Powered by YOTPO</span><img class='lazy' src="{{ 'badge_static.png' | asset_url }}" width="152" height="138" alt="review badge" loading="auto" /></a></div>
-      {% comment %}
-      <a href="/">
-        <img class='lazy' src="{{ section.settings.footer_logo | img_url: '720x440' }}" />
-      </a>
-      {% endcomment %}
-    </div>
+    {% comment %} Footer navigation removed {% endcomment %}
     
     <article class="footer__contact">
       <div class="footer__contact--cta"><a href="{{ section.settings.contact_url }}">{{ section.settings.contact_cta }}</a></div>
