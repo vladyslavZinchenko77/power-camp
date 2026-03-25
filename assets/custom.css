@@ -868,7 +868,7 @@ fieldset.product-form__input .form__label {
   right: 2px;
   top: 2px;
   height: 36px;
-  background: #1d245b;
+  background: #2d2d2d;
   color: #fff;
   width: 80px;
   text-transform: uppercase;
@@ -881,7 +881,7 @@ fieldset.product-form__input .form__label {
 }
 
 .header-search-input form button.header__search--submit:hover {
-  background-color: #373d6b;
+  background-color: #3d3d3d;
 }
 
 .header-search-input {

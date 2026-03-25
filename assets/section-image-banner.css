@@ -479,3 +479,28 @@
     color: currentColor;
   }
 }
+
+/* Banner text white styles */
+.banner .banner__heading,
+.banner .banner__text {
+  color: #ffffff;
+}
+
+/* Banner button green styles */
+.banner .banner__buttons .button--primary {
+  --color-button: 74, 133, 59;
+  --color-button-text: 255, 255, 255;
+  --alpha-button-background: 1;
+}
+
+.banner .banner__buttons .button--secondary {
+  --color-button: 74, 133, 59;
+  --color-button-text: 255, 255, 255;
+  --alpha-button-background: 0;
+  --alpha-button-border: 1;
+  border: 2px solid rgb(74, 133, 59);
+}
+
+.banner .banner__buttons .button--secondary:after {
+  box-shadow: none;
+}
