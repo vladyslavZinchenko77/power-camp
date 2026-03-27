@@ -65,7 +65,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "",
+        "collection": "power-up-your-adventure",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
