@@ -58,6 +58,7 @@
       "settings": {
         "bg_color": "#1a1a1a",
         "text_color": "#f5f5f5",
+        "header_logo": "shopify://shop_images/logo-power-camp.svg",
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "drawer",
