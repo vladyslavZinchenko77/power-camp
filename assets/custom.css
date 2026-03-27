@@ -417,8 +417,8 @@ product-info .price__container .price-item--sale {
   width: 100%;
   margin-left: 10px;
   font-weight: 700;
-  background: #05aff2;
-  border-color: #05aff2;
+  background: #000;
+  border-color: #000;
   text-transform: uppercase;
   font-family: "open_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -1302,7 +1302,7 @@ sticky-header .header {
 
 .breadcrumbs {
   text-transform: uppercase;
-  padding: 0;
+  padding: 10px 0;
 }
 
 .breadcrumbs a, .breadcrumbs span {

@@ -107,8 +107,40 @@
       }
     },
     "0e9911e3-8198-4349-b006-2907e5efb028": {
-      "type": "yopto-review",
-      "settings": {}
+      "type": "x-product-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the warranty?",
+            "answer": "<p>We offer a standard warranty on all products.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders typically ship within 1 business day.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer returns?",
+            "answer": "<p>Yes, we accept returns within 30 days of purchase.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "settings": {
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "open_first": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "custom_liquid_d6ixrC": {
       "type": "custom-liquid",
