@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <title>Power Camp - Portable Power Solutions</title>
+  <!-- Battery icon with lightning bolt -->
+  <g transform="translate(0, 4)">
+    <!-- Battery body -->
+    <rect x="2" y="8" width="32" height="24" rx="3" stroke="#4ADE80" stroke-width="2" fill="none"/>
+    <!-- Battery terminal -->
+    <rect x="34" y="14" width="4" height="12" rx="1.5" fill="#4ADE80"/>
+    <!-- Lightning bolt -->
+    <path d="M20 10L14 21h6l-2 11 8-13h-6l2-9z" fill="#4ADE80"/>
+  </g>
+  <!-- Text: POWER -->
+  <text x="48" y="28" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#FFFFFF">POWER</text>
+  <!-- Text: CAMP -->
+  <text x="152" y="28" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="300" letter-spacing="2" fill="#4ADE80">CAMP</text>
+  <!-- Subtitle -->
+  <text x="48" y="42" font-family="'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" letter-spacing="3" fill="#9CA3AF">PORTABLE POWER SOLUTIONS</text>
+</svg>
