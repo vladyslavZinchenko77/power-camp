@@ -334,6 +334,7 @@
     },
     "08370bc9-8552-4396-86cb-0d5ef007c92b": {
       "type": "section-newsletter-form",
+      "disabled": true,
       "settings": {
         "title": "SIGN UP FOR OUR WEEKLY NEWSLETTER",
         "content": "<p>Get special offers and discounts straight to your inbox.</p>"
