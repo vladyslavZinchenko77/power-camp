@@ -133,10 +133,10 @@
           "type": "newsletter",
           "settings": {
             "title": "Stay Connected",
-            "social_facebook": "",
-            "social_instagram": "",
+            "social_facebook": "http://facebook.com/",
+            "social_instagram": "https://www.instagram.com/",
             "social_tiktok": "",
-            "social_youtube": "",
+            "social_youtube": "https://www.youtube.com/",
             "newsletter_text": "Sign up for exclusive updates, new arrivals & insider only discounts",
             "placeholder": "Enter your email",
             "button_label": "Submit"
