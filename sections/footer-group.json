@@ -118,8 +118,8 @@
         "nav_menu_2": {
           "type": "menu",
           "settings": {
-            "title": "About Us",
-            "menu": ""
+            "title": "COMMUNITY",
+            "menu": "x-footer-community"
           }
         },
         "nav_menu_3": {
