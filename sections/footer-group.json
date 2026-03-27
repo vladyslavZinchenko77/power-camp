@@ -112,7 +112,7 @@
           "type": "menu",
           "settings": {
             "title": "Company",
-            "menu": "x-footer"
+            "menu": "x-footer-company"
           }
         },
         "nav_menu_2": {
