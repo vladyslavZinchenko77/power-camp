@@ -188,9 +188,10 @@
 
 .card__media .media img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   width: 100%;
+  background-color: #fff;
 }
 
 .card__inner:not(.ratio) > .card__content {
