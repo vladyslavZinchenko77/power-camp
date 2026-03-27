@@ -111,8 +111,8 @@
         "nav_menu_1": {
           "type": "menu",
           "settings": {
-            "title": "Customer Service",
-            "menu": "footer"
+            "title": "Company",
+            "menu": "x-footer"
           }
         },
         "nav_menu_2": {
@@ -133,6 +133,10 @@
           "type": "newsletter",
           "settings": {
             "title": "Stay Connected",
+            "social_facebook": "",
+            "social_instagram": "",
+            "social_tiktok": "",
+            "social_youtube": "",
             "newsletter_text": "Sign up for exclusive updates, new arrivals & insider only discounts",
             "placeholder": "Enter your email",
             "button_label": "Submit"
