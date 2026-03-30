@@ -17,14 +17,14 @@
         "announce_1": {
           "type": "announcement",
           "settings": {
-            "text": "Free US Shipping on Orders Over $99",
+            "text": "Free US Shipping on All Orders",
             "link": ""
           }
         },
         "announce_2": {
           "type": "announcement",
           "settings": {
-            "text": "Discreet Packaging on All Orders",
+            "text": "2-Year Warranty on All Products",
             "link": ""
           }
         },
