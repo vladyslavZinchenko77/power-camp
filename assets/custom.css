@@ -536,8 +536,9 @@ fieldset.product-form__input .form__label {
   margin-bottom: 0;
   margin-right: 0;
   height: 25px;
-  border: 1px solid #05aff2;
-  color: #05aff2;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
   text-transform: uppercase;
   font-family: "open_sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -557,7 +558,7 @@ fieldset.product-form__input .form__label {
 }
 
 .bundle-products--item .content .add-to-cart:hover {
-  background-color: #05aff2;
+  background-color: #333;
   color: #fff;
 }
 

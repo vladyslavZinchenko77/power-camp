@@ -112,26 +112,54 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "What is the warranty?",
-            "answer": "<p>We offer a standard warranty on all products.</p>"
+            "question": "What warranty do you offer?",
+            "answer": "<p>All our products come with a manufacturer warranty (duration varies by product — check the specs section). If you experience any defects in materials or workmanship during the warranty period, we'll repair or replace the item at no cost.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>Orders typically ship within 1 business day.</p>"
+            "answer": "<p>We ship 99% of orders within 1 business day. Standard US delivery takes 3–7 business days depending on your location. International shipping typically takes 7–14 business days. You'll receive a tracking number as soon as your order ships.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Do you offer returns?",
-            "answer": "<p>Yes, we accept returns within 30 days of purchase.</p>"
+            "question": "What batteries are compatible with your inverters?",
+            "answer": "<p>Our hybrid inverters work with 24V or 48V battery systems (depending on model) including lead-acid, AGM, gel, and LiFePO4 lithium batteries. For optimal performance, we recommend LiFePO4 batteries — check our <strong>Bundle</strong> options on each product page for pre-matched battery pairings.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use a solar inverter without batteries?",
+            "answer": "<p>Yes — many of our hybrid inverters support battery-free operation, converting solar energy directly to AC output. This is a great cost-effective way to start with solar and add batteries later. Check the product specs for \"Battery-free operation\" compatibility.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I choose the right power station or battery size?",
+            "answer": "<p>It depends on what you need to power. As a rule of thumb: add up the wattage of devices you'll run simultaneously. A 1200W station handles phones, laptops, lights, and small appliances. A 2000W+ station can run fridges, power tools, and CPAP machines. For batteries, consider capacity in Ah — 100Ah at 12.8V gives you about 1,280Wh of usable energy. Contact us if you need help sizing your system.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer returns and refunds?",
+            "answer": "<p>Yes, we accept returns within 30 days of delivery for unused items in original packaging. Once we receive the return, we'll process your refund within 5 business days. Defective items are covered under warranty and can be returned at any time during the warranty period.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to ship LiFePO4 batteries?",
+            "answer": "<p>Absolutely. LiFePO4 (lithium iron phosphate) is the safest lithium battery chemistry available — no risk of thermal runaway. All our batteries are UN38.3 certified for safe transport. We ship with damage-free guarantee packaging to ensure your battery arrives in perfect condition.</p>"
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7"],
       "settings": {
         "heading": "FAQ",
         "heading_size": "h1",
