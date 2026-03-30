@@ -1,0 +1,202 @@
+{%- style -%}
+  .x-trust-badges-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px 0 {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .x-trust-badges-{{ section.id }} {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .x-trust-badges-{{ section.id }} .x-trust-badges__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .x-trust-badges-{{ section.id }} .x-trust-badges__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .x-trust-badges-{{ section.id }} .x-trust-badges__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .x-trust-badges-{{ section.id }} .x-trust-badges__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .x-trust-badges-{{ section.id }} .x-trust-badges__icon {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .x-trust-badges-{{ section.id }} .x-trust-badges__label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.3;
+  }
+{%- endstyle -%}
+
+<section class="x-trust-badges-{{ section.id }}">
+  <div class="page-width">
+    <div class="x-trust-badges__grid">
+
+      {%- for block in section.blocks -%}
+        <div class="x-trust-badges__item" {{ block.shopify_attributes }}>
+          <div class="x-trust-badges__icon">
+            {%- case block.settings.icon -%}
+              {%- when 'shipping' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                  <!-- Box on truck bed -->
+                  <rect x="8" y="22" width="30" height="20" rx="2" stroke="{{ section.settings.icon_color }}" stroke-width="2"/>
+                  <path d="M38 30h10l6 8v4h-16" stroke="{{ section.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Wheels -->
+                  <circle cx="20" cy="44" r="4" stroke="{{ section.settings.icon_color }}" stroke-width="2" fill="none"/>
+                  <circle cx="46" cy="44" r="4" stroke="{{ section.settings.icon_color }}" stroke-width="2" fill="none"/>
+                  <!-- Ground line -->
+                  <path d="M4 48h8m16 0h8m16 0h4" stroke="{{ section.settings.icon_color }}" stroke-width="1.5" stroke-linecap="round"/>
+                  <!-- Free tag / globe hint -->
+                  <circle cx="23" cy="14" r="6" stroke="{{ section.settings.icon_color }}" stroke-width="1.5"/>
+                  <path d="M23 8v12m-6-6h12" stroke="{{ section.settings.icon_color }}" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+                  <path d="M17.5 12c0 0 2.5 1.5 5.5 1.5s5.5-1.5 5.5-1.5" stroke="{{ section.settings.icon_color }}" stroke-width="1" fill="none" opacity="0.5"/>
+                  <path d="M17.5 16c0 0 2.5-1.5 5.5-1.5s5.5 1.5 5.5 1.5" stroke="{{ section.settings.icon_color }}" stroke-width="1" fill="none" opacity="0.5"/>
+                </svg>
+
+              {%- when 'fast_delivery' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="30" stroke="{{ section.settings.icon_color }}" stroke-width="2"/>
+                  <circle cx="32" cy="32" r="14" stroke="{{ section.settings.icon_color }}" stroke-width="2"/>
+                  <path d="M32 24v8l5 5" stroke="{{ section.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M32 18v2m0 24v2m14-14h-2M20 32h-2" stroke="{{ section.settings.icon_color }}" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M15 19l2 2m30 22l2 2m-34 0l-2 2m34-26l2-2" stroke="{{ section.settings.icon_color }}" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+
+              {%- when 'shield' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                  <!-- Outer shield -->
+                  <path d="M32 4L8 16v16c0 16 10 28 24 32 14-4 24-16 24-32V16L32 4z" stroke="{{ section.settings.icon_color }}" stroke-width="2" stroke-linejoin="round"/>
+                  <!-- Inner shield -->
+                  <path d="M32 12L14 21v11c0 12 7.5 21 18 24 10.5-3 18-12 18-24V21L32 12z" stroke="{{ section.settings.icon_color }}" stroke-width="1.5" stroke-linejoin="round" opacity="0.4"/>
+                  <!-- Box / package inside -->
+                  <rect x="24" y="26" width="16" height="12" rx="1.5" stroke="{{ section.settings.icon_color }}" stroke-width="2"/>
+                  <path d="M24 30h16" stroke="{{ section.settings.icon_color }}" stroke-width="1.5"/>
+                  <path d="M30 26v12m4-12v12" stroke="{{ section.settings.icon_color }}" stroke-width="1" opacity="0.5"/>
+                </svg>
+
+              {%- when 'certified' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="28" r="16" stroke="{{ section.settings.icon_color }}" stroke-width="2"/>
+                  <path d="M24 28l5 5 10-10" stroke="{{ section.settings.icon_color }}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 42l-4 16 14-6 14 6-4-16" stroke="{{ section.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+            {%- endcase -%}
+          </div>
+          <span class="x-trust-badges__label">{{ block.settings.title }}</span>
+        </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "x-Trust Badges",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#22c55e"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shipping", "label": "Shipping / Globe" },
+            { "value": "fast_delivery", "label": "Fast Delivery / Clock" },
+            { "value": "shield", "label": "Shield / Guarantee" },
+            { "value": "certified", "label": "Certified / Medal" }
+          ],
+          "default": "shipping"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Trust Badge"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "x-Trust Badges",
+      "blocks": [
+        { "type": "badge", "settings": { "icon": "shipping", "title": "FREE SHIPPING" } },
+        { "type": "badge", "settings": { "icon": "fast_delivery", "title": "SHIPS NEXT BUSINESS DAY" } },
+        { "type": "badge", "settings": { "icon": "shield", "title": "DAMAGE-FREE GUARANTEE" } },
+        { "type": "badge", "settings": { "icon": "certified", "title": "CERTIFIED PRODUCTS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
