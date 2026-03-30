@@ -15,14 +15,14 @@
         "hero_heading": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to <em>Power Camp</em>",
+            "heading": "Off-Grid Power You Can Trust",
             "heading_size": "h0"
           }
         },
         "hero_text": {
           "type": "text",
           "settings": {
-            "text": "Premium quality. Discreet packaging. Fast shipping worldwide.",
+            "text": "Portable power stations, solar panels & LiFePO4 batteries. 3,000+ charge cycles. 2-year warranty. Free shipping on all orders.",
             "text_style": "subtitle"
           }
         },
@@ -89,12 +89,12 @@
       "type": "x-promo-sale-banner",
       "name": "x-Promo sale banner",
       "settings": {
-        "left_subtitle": "20% Off",
-        "left_big_text": "SALE",
-        "right_heading": "Buy 3 Get 20% Off",
-        "right_description": "<p>Get extra discount on all items! Buy <strong>2 items and Get 15%</strong> off! <strong>Buy 3 items and Get 20%</strong> off on each item all the store!</p>",
-        "button_label": "Shop Now",
-        "button_link": "",
+        "left_subtitle": "Save 15%",
+        "left_big_text": "BUNDLE",
+        "right_heading": "Power Station + Solar Panel",
+        "right_description": "<p>Get the ultimate off-grid setup! <strong>Bundle any power station with a solar panel and save 15%.</strong> Everything you need to stay powered outdoors.</p>",
+        "button_label": "Build Your Bundle",
+        "button_link": "shopify://collections/all",
         "bg_color": "#ffffff",
         "text_color": "#1a1a1a",
         "accent_color": "#e53e3e",
@@ -264,7 +264,7 @@
           "settings": {
             "platform": "facebook",
             "rating": 5,
-            "text": "The blade takes and keeps a razor sharp edge that makes carving a dream. Strongly recommended!",
+            "text": "Powered our entire campsite for 3 days straight — fridge, lights, and phone charging. Way better than hauling a gas generator!",
             "author": "John Murray"
           }
         },
@@ -273,7 +273,7 @@
           "settings": {
             "platform": "facebook",
             "rating": 5,
-            "text": "I have numerous tools, every one of them came razor sharp and ready to use straight out of the box. Very good quality.",
+            "text": "The LiFePO4 battery exceeded my expectations. After 6 months of daily use, it still holds full capacity. Best investment for my solar setup.",
             "author": "Tina Hammond"
           }
         },
@@ -282,8 +282,8 @@
           "settings": {
             "platform": "facebook",
             "rating": 5,
-            "text": "All of the tools I have ordered have been reasonably priced and generally exceeded my expectations. Highly recommend!",
-            "author": "Don Smerker"
+            "text": "Great prices on solar panels and fast shipping. The 100W panel charges my power station in about 4 hours. Perfect for weekend camping trips.",
+            "author": "Don Strecker"
           }
         },
         "testimonial_4": {
@@ -291,7 +291,7 @@
           "settings": {
             "platform": "google",
             "rating": 5,
-            "text": "Super fast shipping and the product quality is outstanding. Will definitely be ordering again soon!",
+            "text": "Bought the portable power station for emergency backup at home. It handled our fridge and Wi-Fi router during a 12-hour outage no problem.",
             "author": "Mike Reynolds"
           }
         },
@@ -300,7 +300,7 @@
           "settings": {
             "platform": "google",
             "rating": 5,
-            "text": "Excellent customer service. Had a question about my order and they responded within an hour. Great experience overall.",
+            "text": "Customer service helped me pick the right battery for my RV. Setup was easy and it runs my entire 12V system. Couldn't be happier.",
             "author": "Sarah Chen"
           }
         },
@@ -309,7 +309,7 @@
           "settings": {
             "platform": "trustpilot",
             "rating": 5,
-            "text": "Best prices I've found online and the quality is top notch. Packaging was discreet and delivery was quick. 10/10!",
+            "text": "Best prices on LiFePO4 batteries I've found anywhere. 3 months in and my off-grid cabin setup is running flawlessly. 10/10!",
             "author": "Alex Thompson"
           }
         }

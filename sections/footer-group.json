@@ -12,60 +12,49 @@
   "type": "footer",
   "sections": {
     "19e71002-8b0e-453e-84f7-19aa57d9b21e": {
-      "type": "theme_icons",
+      "type": "x-trust-badges",
       "blocks": {
-        "60b232b2-7073-4ba5-bc35-5837092f3795": {
-          "type": "Icon",
+        "badge_1": {
+          "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/1.png",
-            "title": "DELIVERED ANYWHERE",
-            "url": ""
+            "icon": "shipping",
+            "title": "FREE SHIPPING"
           }
         },
-        "492bd92d-8cd2-4236-83b5-9374dd87b226": {
-          "type": "Icon",
+        "badge_2": {
+          "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/2.png",
-            "title": "ORDER TODAY, SHIPS TOMORROW",
-            "url": ""
+            "icon": "fast_delivery",
+            "title": "SHIPS NEXT BUSINESS DAY"
           }
         },
-        "71878c45-e09e-49c7-9ac3-9f21953f7d04": {
-          "type": "Icon",
+        "badge_3": {
+          "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/3.png",
-            "title": "DAMAGE-FREE GUARANTEE",
-            "url": ""
+            "icon": "shield",
+            "title": "DAMAGE-FREE GUARANTEE"
           }
         },
-        "b8eeb731-c576-439a-8880-87deb8538c9a": {
-          "type": "Icon",
+        "badge_4": {
+          "type": "badge",
           "settings": {
-            "image": "shopify://shop_images/4.png",
-            "title": "CERTIFIED PRODUCTS",
-            "url": ""
+            "icon": "certified",
+            "title": "CERTIFIED PRODUCTS"
           }
         }
       },
       "block_order": [
-        "60b232b2-7073-4ba5-bc35-5837092f3795",
-        "492bd92d-8cd2-4236-83b5-9374dd87b226",
-        "71878c45-e09e-49c7-9ac3-9f21953f7d04",
-        "b8eeb731-c576-439a-8880-87deb8538c9a"
+        "badge_1",
+        "badge_2",
+        "badge_3",
+        "badge_4"
       ],
       "settings": {
-        "background-color": "#1a1a1a",
-        "text-color": "#ffffff",
-        "enable_links": false,
-        "link-title-1": "",
-        "link-url-1": "",
-        "link-text-1": "",
-        "link-title-2": "",
-        "link-url-2": "",
-        "link-text-2": "",
-        "link-title-3": "",
-        "link-url-3": "",
-        "link-text-3": ""
+        "bg_color": "#1a1a1a",
+        "text_color": "#ffffff",
+        "icon_color": "#22c55e",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "7941ee74-630d-45f6-8257-8a4d7b04335d": {
